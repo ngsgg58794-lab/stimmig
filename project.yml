@@ -1,6 +1,6 @@
 name: Stimmig
 options:
-  bundleIdPrefix: com.stimmig
+  bundleIdPrefix: com.pinksharkdesign
   deploymentTarget:
     iOS: "16.0"
   createIntermediateGroups: true
@@ -23,7 +23,7 @@ targets:
         UIRequiresFullScreen: true
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.stimmig.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.pinksharkdesign.stimmig
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "5.0"
