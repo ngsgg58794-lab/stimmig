@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		027ED3B641043F78045AF98C /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E467AA145F49D7650E28202A /* TopBar.swift */; };
+		041FA67658D9FCE14B7CFE07 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A1EA79600913DEFED4C09E /* StartView.swift */; };
+		0C4992D0184401E50D692A07 /* JournalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E34FE3188B562257566A5A /* JournalStore.swift */; };
+		0EA83543147768C7C25C500A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC109B465800E62E437721 /* RootView.swift */; };
+		176A8D99E2BE8AD1C717F66F /* BrandMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D32D5EA222159A39AB55C /* BrandMark.swift */; };
+		288DCC054AE836717F8DBC71 /* EmotionWheelCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7123F18CF83C7E63A3086401 /* EmotionWheelCanvas.swift */; };
+		44FC710072C9480EC53351AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2C5C7728961A4A115103FE7 /* Assets.xcassets */; };
+		49F0C6A1D333B09A1AAD6769 /* StimmigApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973F2A01A83B2290D1E3D4A /* StimmigApp.swift */; };
+		B811449D545779B5A9EF9BBA /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09F55224C7634BA7E8D2A60 /* JournalView.swift */; };
+		C01F65D90E0ECD506E71AE86 /* WheelScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCFC755B4C46570C771139 /* WheelScreenView.swift */; };
+		C2674B85423ABC0447772D13 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2E9ED1A0728D904E73B47 /* Theme.swift */; };
+		D7E83AC59C73DB346A0AB78E /* WedgeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0681C90B6340BA4A5058C25 /* WedgeShape.swift */; };
+		E6F513A1EA8B1CFF4BF1E616 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2895428134B58B663F8CA8A /* JournalEntry.swift */; };
+		E9CF5180BF2D180A1DE34738 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37F3FBAACABA67DB44E656 /* Emotion.swift */; };
+		FD8EC5B94FF592ACE9407E0F /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F8C13297BE4BB25890A90 /* ResultView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A3A5F4E323EBA826253276A /* Stimmig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stimmig.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F37F3FBAACABA67DB44E656 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		65DCFC755B4C46570C771139 /* WheelScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelScreenView.swift; sourceTree = "<group>"; };
+		7123F18CF83C7E63A3086401 /* EmotionWheelCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionWheelCanvas.swift; sourceTree = "<group>"; };
+		72E34FE3188B562257566A5A /* JournalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalStore.swift; sourceTree = "<group>"; };
+		9973F2A01A83B2290D1E3D4A /* StimmigApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmigApp.swift; sourceTree = "<group>"; };
+		A2C5C7728961A4A115103FE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE4F8C13297BE4BB25890A90 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		B8DC109B465800E62E437721 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		BBC2E9ED1A0728D904E73B47 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C0681C90B6340BA4A5058C25 /* WedgeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WedgeShape.swift; sourceTree = "<group>"; };
+		C09F55224C7634BA7E8D2A60 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		C27D32D5EA222159A39AB55C /* BrandMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandMark.swift; sourceTree = "<group>"; };
+		E2895428134B58B663F8CA8A /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		E3A1EA79600913DEFED4C09E /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		E467AA145F49D7650E28202A /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		11880188BD2E59B310C69140 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2C5C7728961A4A115103FE7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1CB1C6875D04AFAFB8F10968 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9973F2A01A83B2290D1E3D4A /* StimmigApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5CA6C254CD9496339BF83465 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C27D32D5EA222159A39AB55C /* BrandMark.swift */,
+				C0681C90B6340BA4A5058C25 /* WedgeShape.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6B8AF876D1CE140F8F268AE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A3A5F4E323EBA826253276A /* Stimmig.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7034FECC5A4FE2F192E0C076 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F37F3FBAACABA67DB44E656 /* Emotion.swift */,
+				E2895428134B58B663F8CA8A /* JournalEntry.swift */,
+				72E34FE3188B562257566A5A /* JournalStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82553795D66C921F1C42F15A /* Stimmig */ = {
+			isa = PBXGroup;
+			children = (
+				1CB1C6875D04AFAFB8F10968 /* App */,
+				7034FECC5A4FE2F192E0C076 /* Models */,
+				11880188BD2E59B310C69140 /* Resources */,
+				AA3F5A7AE64694306D2EE5B4 /* Theme */,
+				86A76F5331F9BC64F0153440 /* Views */,
+			);
+			path = Stimmig;
+			sourceTree = "<group>";
+		};
+		86A76F5331F9BC64F0153440 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7123F18CF83C7E63A3086401 /* EmotionWheelCanvas.swift */,
+				C09F55224C7634BA7E8D2A60 /* JournalView.swift */,
+				AE4F8C13297BE4BB25890A90 /* ResultView.swift */,
+				B8DC109B465800E62E437721 /* RootView.swift */,
+				E3A1EA79600913DEFED4C09E /* StartView.swift */,
+				E467AA145F49D7650E28202A /* TopBar.swift */,
+				65DCFC755B4C46570C771139 /* WheelScreenView.swift */,
+				5CA6C254CD9496339BF83465 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		926485BB156CC996FFBBF0DD = {
+			isa = PBXGroup;
+			children = (
+				82553795D66C921F1C42F15A /* Stimmig */,
+				6B8AF876D1CE140F8F268AE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA3F5A7AE64694306D2EE5B4 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				BBC2E9ED1A0728D904E73B47 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F92FE948CC7D04090EBBE82 /* Stimmig */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79A1405FFFC699838D9796E9 /* Build configuration list for PBXNativeTarget "Stimmig" */;
+			buildPhases = (
+				0864B9421A93C47540218902 /* Sources */,
+				4E2A7AD2C7E66545C3D567F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stimmig;
+			packageProductDependencies = (
+			);
+			productName = Stimmig;
+			productReference = 2A3A5F4E323EBA826253276A /* Stimmig.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AFEB5033B86251313AE92C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 0872CD6631DF1FBA9C147795 /* Build configuration list for PBXProject "Stimmig" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 926485BB156CC996FFBBF0DD;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6B8AF876D1CE140F8F268AE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F92FE948CC7D04090EBBE82 /* Stimmig */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E2A7AD2C7E66545C3D567F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44FC710072C9480EC53351AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0864B9421A93C47540218902 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				176A8D99E2BE8AD1C717F66F /* BrandMark.swift in Sources */,
+				E9CF5180BF2D180A1DE34738 /* Emotion.swift in Sources */,
+				288DCC054AE836717F8DBC71 /* EmotionWheelCanvas.swift in Sources */,
+				E6F513A1EA8B1CFF4BF1E616 /* JournalEntry.swift in Sources */,
+				0C4992D0184401E50D692A07 /* JournalStore.swift in Sources */,
+				B811449D545779B5A9EF9BBA /* JournalView.swift in Sources */,
+				FD8EC5B94FF592ACE9407E0F /* ResultView.swift in Sources */,
+				0EA83543147768C7C25C500A /* RootView.swift in Sources */,
+				041FA67658D9FCE14B7CFE07 /* StartView.swift in Sources */,
+				49F0C6A1D333B09A1AAD6769 /* StimmigApp.swift in Sources */,
+				C2674B85423ABC0447772D13 /* Theme.swift in Sources */,
+				027ED3B641043F78045AF98C /* TopBar.swift in Sources */,
+				D7E83AC59C73DB346A0AB78E /* WedgeShape.swift in Sources */,
+				C01F65D90E0ECD506E71AE86 /* WheelScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		81C6AF48608883640864268B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AAE0F3B3B4FBB442FEE57F4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G5RLWXCJQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Generated/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stimmig.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B1BC0F0B0807F19CA1AEE4CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G5RLWXCJQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Generated/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stimmig.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F7E941C9092A3A13C1F21F8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0872CD6631DF1FBA9C147795 /* Build configuration list for PBXProject "Stimmig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E941C9092A3A13C1F21F8E /* Debug */,
+				81C6AF48608883640864268B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		79A1405FFFC699838D9796E9 /* Build configuration list for PBXNativeTarget "Stimmig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1BC0F0B0807F19CA1AEE4CB /* Debug */,
+				AAE0F3B3B4FBB442FEE57F4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AFEB5033B86251313AE92C2 /* Project object */;
+}

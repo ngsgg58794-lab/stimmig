@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#FBFAF7">
+<title>stimmig · Gefühlsrad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFAF7;
+    --ink:#16130F;
+    --muted:#7A736B;
+    --line:#ECE7DF;
+    --card:#FFFFFF;
+    --hl:#FF2D78;          /* knallige Highlightfarbe */
+    --hl-soft:#FFE3EE;
+    --shadow:0 18px 50px -22px rgba(20,17,15,.30);
+    --display:"Bricolage Grotesque", system-ui, sans-serif;
+    --body:"Inter", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{
+    font-family:var(--body);
+    background:var(--bg);
+    color:var(--ink);
+    display:flex;justify-content:center;
+    overscroll-behavior:none;
+  }
+  .app{
+    width:100%;max-width:440px;min-height:100dvh;
+    display:flex;flex-direction:column;
+    padding:max(18px,env(safe-area-inset-top)) 22px max(22px,env(safe-area-inset-bottom));
+    position:relative;
+  }
+
+  /* ---------- top bar ---------- */
+  .bar{display:flex;align-items:center;justify-content:space-between;height:40px;flex:0 0 auto;}
+  .brand{display:flex;align-items:center;gap:9px;}
+  .brand svg{width:28px;height:28px;display:block;}
+  .brand b{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em;}
+  .steps{display:flex;gap:6px;align-items:center;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.35s;}
+  .dot.on{background:var(--hl);transform:scale(1.25);}
+  .back{
+    border:none;background:none;font-family:var(--body);font-weight:600;font-size:14px;
+    color:var(--hl);cursor:pointer;padding:8px 4px;border-radius:8px;
+    display:none;align-items:center;gap:5px;
+  }
+  .back.show{display:inline-flex;}
+
+  /* ---------- center stage ---------- */
+  .stage{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+  .wheelwrap{position:relative;width:100%;max-width:340px;aspect-ratio:1;margin:4px auto;}
+  svg.wheel{width:100%;height:100%;overflow:visible;display:block;}
+  .seg{cursor:pointer;outline:none;transition:opacity .25s, transform .25s;}
+  .seg path{transition:filter .2s, stroke .2s;}
+  .seg:hover path, .seg:focus-visible path{stroke:var(--hl);stroke-width:3;}
+  .seg:focus-visible{ }
+  .seg text{font-family:var(--display);font-weight:700;fill:#16130F;pointer-events:none;}
+  .core{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;pointer-events:none;}
+  .coredot{width:14px;height:14px;border-radius:50%;background:var(--hl);box-shadow:0 0 0 6px rgba(255,45,120,.15);}
+
+  /* ---------- prompt + copy ---------- */
+  .ask{text-align:center;min-height:74px;}
+  .ask h2{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.025em;margin:6px 0 4px;line-height:1.05;}
+  .ask p{margin:0;color:var(--muted);font-size:14px;}
+  .crumb{font-size:13px;color:var(--muted);margin-top:2px;min-height:18px;}
+  .crumb b{color:var(--ink);font-weight:600;}
+  .crumb .sep{color:var(--hl);margin:0 4px;font-weight:700;}
+
+  /* ---------- start screen ---------- */
+  .start{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0;}
+  .start .mark{width:96px;height:96px;margin-bottom:20px;}
+  .start h1{font-family:var(--display);font-weight:800;font-size:46px;letter-spacing:-.04em;margin:0;}
+  .start .tag{color:var(--muted);font-size:16px;margin:10px 0 34px;max-width:260px;line-height:1.4;}
+  .btn{
+    font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;
+    background:var(--hl);color:#fff;border:none;border-radius:999px;
+    padding:16px 38px;cursor:pointer;box-shadow:0 12px 30px -10px rgba(255,45,120,.6);
+    transition:transform .15s, box-shadow .2s;
+  }
+  .btn:active{transform:translateY(1px) scale(.99);}
+  .btn.ghost{background:none;color:var(--hl);box-shadow:none;padding:14px 22px;}
+  .start .hint{margin-top:18px;color:var(--muted);font-size:12.5px;max-width:280px;line-height:1.45;}
+
+  /* ---------- result ---------- */
+  .result{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .result .eyebrow{color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase;}
+  .result h1{font-family:var(--display);font-weight:800;font-size:52px;letter-spacing:-.04em;margin:6px 0 2px;line-height:1;}
+  .result .path{color:var(--muted);font-size:15px;margin-bottom:22px;}
+  .result .path b{color:var(--ink);font-weight:600;}
+  .reflect{
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:22px 22px;max-width:330px;box-shadow:var(--shadow);
+    font-size:15.5px;line-height:1.5;color:#3a342e;
+  }
+  .reflect .swatch{width:34px;height:6px;border-radius:3px;margin:0 auto 14px;}
+  .result .again{margin-top:26px;display:flex;flex-direction:column;gap:4px;align-items:center;}
+
+  /* ---------- journal button + bar right ---------- */
+  .bar-right{display:flex;align-items:center;gap:12px;}
+  .pill{
+    font-family:var(--body);font-weight:600;font-size:13px;color:var(--hl);
+    background:var(--hl-soft);border:none;border-radius:999px;padding:8px 14px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .pill:active{transform:scale(.97);}
+
+  /* ---------- note + result actions ---------- */
+  .note{
+    margin-top:16px;width:100%;max-width:330px;border:1px solid var(--line);border-radius:14px;
+    padding:12px 14px;font-family:var(--body);font-size:14px;color:var(--ink);background:var(--card);
+    resize:none;outline:none;line-height:1.4;
+  }
+  .note:focus{border-color:var(--hl);}
+  .actions{margin-top:16px;display:flex;flex-direction:column;gap:8px;align-items:center;width:100%;}
+  .actions .btn{min-width:230px;}
+  .saved{background:#1FBF75 !important;box-shadow:none !important;}
+
+  /* ---------- journal screen ---------- */
+  .journal{flex:1;display:flex;flex-direction:column;align-items:center;padding-top:6px;min-height:0;}
+  .j-title{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.03em;margin:6px 0 2px;}
+  .j-sub{color:var(--muted);font-size:13px;margin:0 0 16px;min-height:16px;}
+  .j-list{width:100%;max-width:380px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;padding-bottom:12px;-webkit-overflow-scrolling:touch;}
+  .entry{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;box-shadow:0 8px 24px -22px rgba(20,17,15,.5);}
+  .entry .e-swatch{width:10px;align-self:stretch;border-radius:6px;flex:0 0 auto;}
+  .entry .e-body{flex:1;min-width:0;}
+  .entry .e-word{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.02em;}
+  .entry .e-meta{color:var(--muted);font-size:12.5px;margin-top:1px;}
+  .entry .e-note{font-size:13.5px;color:#3a342e;margin-top:6px;line-height:1.4;word-break:break-word;}
+  .entry .e-del{border:none;background:none;color:var(--muted);font-size:20px;cursor:pointer;padding:0 4px;border-radius:8px;line-height:1;flex:0 0 auto;}
+  .entry .e-del:hover,.entry .e-del:focus-visible{color:var(--hl);}
+  .j-empty{color:var(--muted);font-size:15px;text-align:center;line-height:1.55;flex:1;display:flex;flex-direction:column;justify-content:center;}
+  #j-new{margin:8px 0 2px;}
+
+  .fade{animation:fade .45s ease both;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion: reduce){
+    .fade{animation:none;}
+    .seg,.seg path,.dot,.btn{transition:none;}
+  }
+  .hidden{display:none !important;}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- top bar -->
+  <div class="bar" id="bar">
+    <div class="brand" id="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="6" fill="#FF2D78"/>
+        <path d="M32 32 m-15 0 a15 15 0 1 1 24 11.7" fill="none" stroke="#FF2D78" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M32 32 m-25 0 a25 25 0 1 1 18.5 24" fill="none" stroke="#FFB0CE" stroke-width="4.5" stroke-linecap="round"/>
+      </svg>
+      <b>stimmig</b>
+    </div>
+    <div class="bar-right">
+      <button class="back" id="back" aria-label="Einen Schritt zurück">‹ zurück</button>
+      <div class="steps" id="steps">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <button class="pill" id="journal-btn" aria-label="Tagebuch öffnen">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 3v18"/></svg>
+        Tagebuch
+      </button>
+    </div>
+  </div>
+
+  <!-- START -->
+  <section class="start" id="screen-start">
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="6" fill="#FF2D78"/>
+      <path d="M32 32 m-15 0 a15 15 0 1 1 24 11.7" fill="none" stroke="#FF2D78" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M32 32 m-25 0 a25 25 0 1 1 18.5 24" fill="none" stroke="#FFB0CE" stroke-width="4.5" stroke-linecap="round"/>
+    </svg>
+    <h1>stimmig</h1>
+    <p class="tag">Finde heraus, wie du dich fühlst – von innen nach außen, Schritt für Schritt.</p>
+    <button class="btn" id="start-btn">Los geht's</button>
+    <p class="hint">Tippe dich vom Kern deines Gefühls nach außen, bis du das Wort findest, das wirklich passt.</p>
+  </section>
+
+  <!-- WHEEL -->
+  <section class="stage hidden" id="screen-wheel">
+    <div class="wheelwrap">
+      <svg class="wheel" id="wheel" viewBox="0 0 380 380" role="group" aria-label="Gefühlsrad"></svg>
+      <div class="core"><span class="coredot"></span></div>
+    </div>
+    <div class="ask">
+      <div class="crumb" id="crumb"></div>
+      <h2 id="ask-h"></h2>
+      <p id="ask-p"></p>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="result hidden" id="screen-result">
+    <div class="eyebrow">Dein Gefühl</div>
+    <h1 id="r-word"></h1>
+    <div class="path" id="r-path"></div>
+    <div class="reflect">
+      <div class="swatch" id="r-swatch"></div>
+      <span id="r-text"></span>
+    </div>
+    <textarea id="r-note" class="note" rows="2" placeholder="Notiz (optional) – was war gerade los?"></textarea>
+    <div class="actions">
+      <button class="btn" id="save-btn">Im Tagebuch speichern</button>
+      <button class="btn ghost" id="again-btn">Nochmal fühlen</button>
+    </div>
+  </section>
+  <!-- TAGEBUCH -->
+  <section class="journal hidden" id="screen-journal">
+    <h2 class="j-title">Tagebuch</h2>
+    <p class="j-sub" id="j-count"></p>
+    <div id="j-list" class="j-list"></div>
+    <div id="j-empty" class="j-empty hidden">Noch keine Einträge.<br>Finde ein Gefühl und speichere es hier.</div>
+    <button class="btn" id="j-new">Neues Gefühl finden</button>
+  </section>
+
+</div>
+
+<script>
+/* ---------------- Daten: Gefühlsrad (innen → außen) ---------------- */
+const WHEEL = [
+  { name:"liebend", color:"#F3D14E", reflect:"Verbundenheit und Zuneigung – schön, dass du das gerade spürst.",
+    sub:[
+      {name:"friedlich",   t:["ruhig","befriedigt"]},
+      {name:"liebevoll",   t:["warmherzig","mitfühlend"]},
+      {name:"romantisch",  t:["leidenschaftlich","verliebt"]},
+      {name:"dankbar",     t:["anerkennend","verbunden"]},
+      {name:"sentimental", t:["nostalgisch","zärtlich"]},
+      {name:"verzaubert",  t:["fasziniert","begeistert"]},
+  ]},
+  { name:"überrascht", color:"#EFA85C", reflect:"Etwas hat dich überrascht – nimm dir einen Moment, es einzuordnen.",
+    sub:[
+      {name:"überwältigt", t:["sprachlos","verblüfft"]},
+      {name:"bewegt",      t:["berührt","angeregt"]},
+      {name:"erschrocken", t:["schockiert","enttäuscht"]},
+      {name:"aufgeregt",   t:["eifrig","energiegeladen"]},
+      {name:"erstaunt",    t:["scheu","erstaunt"]},
+      {name:"verwirrt",    t:["verblüfft","ernüchtert"]},
+  ]},
+  { name:"zornig", color:"#E87E7E", reflect:"Zorn zeigt oft, dass eine Grenze überschritten wurde. Was steckt dahinter?",
+    sub:[
+      {name:"wütend",       t:["nachtragend","neidisch"]},
+      {name:"eifersüchtig", t:["wütend","eifersüchtig"]},
+      {name:"angeekelt",    t:["verächtlich","auflehnend"]},
+      {name:"kritisch",     t:["skeptisch","abweisend"]},
+      {name:"reizbar",      t:["verärgert","genervt"]},
+      {name:"hasserfüllt",  t:["verletzt","verärgert"]},
+  ]},
+  { name:"furchtsam", color:"#B49BD8", reflect:"Angst weist oft auf etwas hin, das dir wichtig ist oder dich schützen will.",
+    sub:[
+      {name:"erschrocken", t:["verängstigt","hilflos"]},
+      {name:"unsicher",    t:["unterlegen","unzulänglich"]},
+      {name:"nervös",      t:["besorgt","ängstlich"]},
+      {name:"entsetzt",    t:["beschämt","furchtbar"]},
+      {name:"abgelehnt",   t:["ausgeschlossen","verfolgt"]},
+      {name:"verängstigt", t:["panisch","aufgelöst"]},
+  ]},
+  { name:"traurig", color:"#80C9A6", reflect:"Auch Traurigkeit darf da sein. Sei freundlich zu dir.",
+    sub:[
+      {name:"einsam",        t:["isoliert","vernachlässigt"]},
+      {name:"verletzt",      t:["gequält","verwirrt"]},
+      {name:"deprimiert",    t:["leer","elend"]},
+      {name:"gelangweilt",   t:["apathisch","gleichgültig"]},
+      {name:"schuldbewusst", t:["reumütig","beschämt"]},
+      {name:"verzweifelt",   t:["machtlos","verletzlich"]},
+  ]},
+  { name:"freudig", color:"#C2CF74", reflect:"Freude tut gut – lass sie ruhig einen Moment nachklingen.",
+    sub:[
+      {name:"optimistisch", t:["hoffnungsvoll","eifrig"]},
+      {name:"glücklich",    t:["vergnügt","begeistert"]},
+      {name:"stolz",        t:["triumphierend","erhaben"]},
+      {name:"gut gelaunt",  t:["spielerisch","gemütlich"]},
+      {name:"erfreut",      t:["zufrieden","befriedigt"]},
+      {name:"euphorisch",   t:["jubilieren","begeistert"]},
+  ]},
+];
+
+/* ---------------- Geometrie-Helfer ---------------- */
+const CX=190, CY=190;
+const BANDS=[
+  {mid:70,  th:52},   // 0 Kern
+  {mid:122, th:48},   // 1 Verfeinerung
+  {mid:166, th:40},   // 2 ganz genau
+];
+const SVGNS="http://www.w3.org/2000/svg";
+
+function polar(r,deg){const a=(deg-90)*Math.PI/180;return [CX+r*Math.cos(a), CY+r*Math.sin(a)];}
+function arcPath(rIn,rOut,a0,a1){
+  const large=(a1-a0)>180?1:0;
+  const [x1,y1]=polar(rOut,a0),[x2,y2]=polar(rOut,a1);
+  const [x3,y3]=polar(rIn,a1),[x4,y4]=polar(rIn,a0);
+  return `M${x1} ${y1} A${rOut} ${rOut} 0 ${large} 1 ${x2} ${y2} L${x3} ${y3} A${rIn} ${rIn} 0 ${large} 0 ${x4} ${y4} Z`;
+}
+function mix(hex,t){ // mix toward white by t (0..1)
+  const n=parseInt(hex.slice(1),16);
+  let r=n>>16,g=(n>>8)&255,b=n&255;
+  r=Math.round(r+(255-r)*t);g=Math.round(g+(255-g)*t);b=Math.round(b+(255-b)*t);
+  return `rgb(${r},${g},${b})`;
+}
+function el(tag,attrs){const e=document.createElementNS(SVGNS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+
+/* ---------------- State ---------------- */
+let step="start";   // start | core | secondary | tertiary | result | journal
+let ci=null, si=null, ti=null;
+let journalReturn="start";
+
+const $=id=>document.getElementById(id);
+const wheel=$("wheel");
+
+/* ---------------- Speicher (lokal, ohne Login) ---------------- */
+/* Nutzt window.storage in Claude; faellt sonst auf localStorage zurueck,
+   damit die Datei auch direkt im Browser funktioniert. */
+const STORE_KEY="stimmig_journal";
+const hasWS = (typeof window!=="undefined") && window.storage;
+async function rawGet(k){
+  if(hasWS){ const r=await window.storage.get(k); return r ? r.value : null; }
+  try{ return localStorage.getItem(k); }catch(e){ return null; }
+}
+async function rawSet(k,v){
+  if(hasWS){ const r=await window.storage.set(k,v); return !!r; }
+  try{ localStorage.setItem(k,v); return true; }catch(e){ return false; }
+}
+async function loadEntries(){
+  try{ const v=await rawGet(STORE_KEY); return v ? JSON.parse(v) : []; }
+  catch(e){ return []; }
+}
+async function addEntry(entry){
+  const arr=await loadEntries(); arr.unshift(entry); return await rawSet(STORE_KEY, JSON.stringify(arr));
+}
+async function deleteEntry(id){
+  const arr=await loadEntries(); return await rawSet(STORE_KEY, JSON.stringify(arr.filter(x=>x.id!==id)));
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function fmtDate(iso){
+  const d=new Date(iso);
+  return d.toLocaleDateString("de-DE",{day:"2-digit",month:"short",year:"numeric"})
+       +" · "+d.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"});
+}
+
+function setScreen(){
+  const wheelStep = step==="core"||step==="secondary"||step==="tertiary";
+  $("screen-start").classList.toggle("hidden", step!=="start");
+  $("screen-wheel").classList.toggle("hidden", !wheelStep);
+  $("screen-result").classList.toggle("hidden", step!=="result");
+  $("screen-journal").classList.toggle("hidden", step!=="journal");
+  $("steps").classList.toggle("hidden", !wheelStep);
+  $("journal-btn").classList.toggle("hidden", !(step==="start"||step==="result"));
+  $("brand").style.visibility = (step==="start") ? "hidden":"visible";
+  $("back").classList.toggle("show", wheelStep || step==="journal");
+  // step dots
+  const lit={core:0,secondary:1,tertiary:2}[step];
+  [...$("steps").children].forEach((d,i)=>d.classList.toggle("on", lit!=null && i<=lit));
+}
+
+/* draws a solid completed band (a colored ring) */
+function solidBand(b,color){
+  wheel.appendChild(el("circle",{cx:CX,cy:CY,r:b.mid,fill:"none",stroke:color,"stroke-width":b.th}));
+}
+/* draws a faint ghost ring to hint depth */
+function ghostBand(b){
+  wheel.appendChild(el("circle",{cx:CX,cy:CY,r:b.mid,fill:"none",stroke:"#EEE9E1","stroke-width":b.th}));
+}
+
+/* draws the active, tappable segmented ring */
+function segRing(b, items, colorFor, onPick){
+  const n=items.length, span=360/n;
+  items.forEach((label,i)=>{
+    const a0=i*span, a1=(i+1)*span, mid=(a0+a1)/2;
+    const g=el("g",{class:"seg",tabindex:"0",role:"button","aria-label":label});
+    const p=el("path",{d:arcPath(b.mid-b.th/2, b.mid+b.th/2, a0+1, a1-1),
+                       fill:colorFor(i), stroke:"#FFFFFF","stroke-width":2});
+    g.appendChild(p);
+    const [lx,ly]=polar(b.mid,mid);
+    const fs = label.length>11 ? 11.5 : 13.5;
+    const tx=el("text",{x:lx,y:ly,"text-anchor":"middle","dominant-baseline":"central","font-size":fs});
+    tx.textContent=label;
+    g.appendChild(tx);
+    const pick=()=>onPick(i);
+    g.addEventListener("click",pick);
+    g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick();}});
+    wheel.appendChild(g);
+  });
+}
+
+function render(){
+  setScreen();
+  if(step==="start"||step==="result"){return;}
+  wheel.innerHTML="";
+  wheel.classList.remove("fade"); void wheel.offsetWidth; wheel.classList.add("fade");
+  const core = ci!=null ? WHEEL[ci] : null;
+
+  // completed inner bands + ghost rings for the not-yet-reached bands
+  if(step==="core"){
+    ghostBand(BANDS[1]); ghostBand(BANDS[2]);
+    segRing(BANDS[0], WHEEL.map(c=>c.name), i=>WHEEL[i].color, i=>{ci=i;step="secondary";si=ti=null;render();});
+  }
+  if(step==="secondary"){
+    solidBand(BANDS[0], core.color);
+    ghostBand(BANDS[2]);
+    segRing(BANDS[1], core.sub.map(s=>s.name),
+            i=> i%2 ? mix(core.color,.34) : mix(core.color,.18),
+            i=>{si=i;step="tertiary";ti=null;render();});
+  }
+  if(step==="tertiary"){
+    solidBand(BANDS[0], core.color);
+    solidBand(BANDS[1], mix(core.color,.26));
+    segRing(BANDS[2], core.sub[si].t,
+            i=> i%2 ? mix(core.color,.5) : mix(core.color,.38),
+            i=>{ti=i;step="result";showResult();});
+  }
+
+  // prompt copy
+  const asks={
+    core:["Wie fühlst du dich?","Wähle, was dem Kern am nächsten kommt."],
+    secondary:["Etwas genauer?","Welche Richtung trifft es besser?"],
+    tertiary:["Und ganz genau?","Das Wort, das wirklich passt."],
+  }[step];
+  $("ask-h").textContent=asks[0];
+  $("ask-p").textContent=asks[1];
+
+  // breadcrumb
+  let c="";
+  if(ci!=null) c+=`<b>${WHEEL[ci].name}</b>`;
+  if(si!=null) c+=`<span class="sep">›</span><b>${WHEEL[ci].sub[si].name}</b>`;
+  $("crumb").innerHTML=c;
+}
+
+function showResult(){
+  setScreen();
+  const core=WHEEL[ci], sub=core.sub[si], word=sub.t[ti];
+  $("r-word").textContent=word;
+  $("r-path").innerHTML=`<b>${core.name}</b> › ${sub.name}`;
+  $("r-swatch").style.background=core.color;
+  $("r-text").textContent=core.reflect;
+  // Save-Button + Notiz zuruecksetzen
+  const sb=$("save-btn"); sb.disabled=false; sb.textContent="Im Tagebuch speichern"; sb.classList.remove("saved");
+  $("r-note").value="";
+  $("screen-result").classList.remove("fade"); void $("screen-result").offsetWidth;
+  $("screen-result").classList.add("fade");
+}
+
+async function renderJournal(){
+  setScreen();
+  const list=$("j-list"); list.innerHTML="";
+  const entries=await loadEntries();
+  $("j-empty").classList.toggle("hidden", entries.length>0);
+  $("j-count").textContent = entries.length
+    ? `${entries.length} ${entries.length===1?"Eintrag":"Einträge"}` : "";
+  entries.forEach(e=>{
+    const row=document.createElement("div"); row.className="entry";
+    row.innerHTML=
+      `<div class="e-swatch" style="background:${e.color}"></div>`+
+      `<div class="e-body">`+
+        `<div class="e-word">${escapeHtml(e.word)}</div>`+
+        `<div class="e-meta">${escapeHtml(e.core)} › ${escapeHtml(e.sub)} · ${fmtDate(e.ts)}</div>`+
+        (e.note?`<div class="e-note">${escapeHtml(e.note)}</div>`:"")+
+      `</div>`+
+      `<button class="e-del" aria-label="Eintrag löschen">×</button>`;
+    row.querySelector(".e-del").addEventListener("click", async ()=>{ await deleteEntry(e.id); renderJournal(); });
+    list.appendChild(row);
+  });
+}
+
+/* ---------------- navigation ---------------- */
+function show(s){
+  step=s;
+  if(s==="result") showResult();
+  else if(s==="journal") renderJournal();
+  else render();
+}
+function startFresh(){ ci=si=ti=null; show("core"); }
+function goBack(){
+  if(step==="journal"){ show(journalReturn||"start"); return; }
+  if(step==="core"){ show("start"); return; }
+  if(step==="secondary"){ ci=null; show("core"); return; }
+  if(step==="tertiary"){ si=null; show("secondary"); return; }
+}
+$("start-btn").addEventListener("click", startFresh);
+$("again-btn").addEventListener("click", startFresh);
+$("j-new").addEventListener("click", startFresh);
+$("back").addEventListener("click", goBack);
+$("journal-btn").addEventListener("click", ()=>{ journalReturn=step; show("journal"); });
+$("save-btn").addEventListener("click", async ()=>{
+  const core=WHEEL[ci], sub=core.sub[si], word=sub.t[ti];
+  const entry={
+    id: Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+    ts: new Date().toISOString(),
+    core: core.name, sub: sub.name, word, color: core.color,
+    note: $("r-note").value.trim()
+  };
+  const sb=$("save-btn"); sb.disabled=true; sb.textContent="Speichern …";
+  const ok=await addEntry(entry);
+  if(ok){ sb.textContent="Gespeichert ✓"; sb.classList.add("saved"); }
+  else { sb.textContent="Erneut versuchen"; sb.disabled=false; }
+});
+
+render();
+</script>
+</body>
+</html>

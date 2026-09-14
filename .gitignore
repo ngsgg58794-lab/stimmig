@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Xcode user-specific state
+**/xcuserdata/
+*.xcuserstate
+
+# Claude Code local state
+**/.claude/settings.local.json
+**/.claude/scheduled_tasks.lock

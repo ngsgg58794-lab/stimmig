@@ -1,0 +1,34 @@
+name: Stimmig
+options:
+  bundleIdPrefix: com.stimmig
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+configs:
+  Debug: debug
+  Release: release
+targets:
+  Stimmig:
+    type: application
+    platform: iOS
+    sources:
+      - path: Stimmig
+    info:
+      path: Generated/Info.plist
+      properties:
+        CFBundleDisplayName: stimmig
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiresFullScreen: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.stimmig.app
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+    scheme: {}
