@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A3A5F4E323EBA826253276A /* stimmig – Gefühlsrad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stimmig – Gefühlsrad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3A5F4E323EBA826253276A /* Stimmig.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Stimmig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F37F3FBAACABA67DB44E656 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		65DCFC755B4C46570C771139 /* WheelScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelScreenView.swift; sourceTree = "<group>"; };
 		7123F18CF83C7E63A3086401 /* EmotionWheelCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionWheelCanvas.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		6B8AF876D1CE140F8F268AE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A3A5F4E323EBA826253276A /* stimmig – Gefühlsrad.app */,
+				2A3A5F4E323EBA826253276A /* Stimmig.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			packageProductDependencies = (
 			);
 			productName = Stimmig;
-			productReference = 2A3A5F4E323EBA826253276A /* stimmig – Gefühlsrad.app */;
+			productReference = 2A3A5F4E323EBA826253276A /* Stimmig.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,6 +159,12 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2F92FE948CC7D04090EBBE82 = {
+						DevelopmentTeam = 9G5RLWXCJQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 0872CD6631DF1FBA9C147795 /* Build configuration list for PBXProject "Stimmig" */;
 			developmentRegion = en;
@@ -276,6 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9G5RLWXCJQ;
@@ -287,7 +294,6 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinksharkdesign.stimmig;
-				PRODUCT_NAME = "stimmig – Gefühlsrad";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -299,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9G5RLWXCJQ;
@@ -310,7 +317,6 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinksharkdesign.stimmig;
-				PRODUCT_NAME = "stimmig – Gefühlsrad";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
