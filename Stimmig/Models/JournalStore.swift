@@ -1,17 +1,14 @@
 import Foundation
+import WidgetKit
 
-/// Local, login-free persistence for journal entries, matching the web app's
-/// use of `localStorage` — stored as a single JSON file in the app's Documents directory.
+/// Local, login-free persistence for journal entries — a JSON file shared with the widget.
 @MainActor
 final class JournalStore: ObservableObject {
     @Published private(set) var entries: [JournalEntry] = []
 
-    private let fileURL: URL
-
     init() {
-        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        fileURL = dir.appendingPathComponent("stimmig_journal.json")
-        load()
+        JournalFile.migrateIfNeeded()
+        entries = JournalFile.load().sorted { $0.timestamp > $1.timestamp }
     }
 
     func add(_ entry: JournalEntry) {
@@ -24,17 +21,8 @@ final class JournalStore: ObservableObject {
         save()
     }
 
-    private func load() {
-        guard let data = try? Data(contentsOf: fileURL) else { return }
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        entries = (try? decoder.decode([JournalEntry].self, from: data)) ?? []
-    }
-
     private func save() {
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
-        guard let data = try? encoder.encode(entries) else { return }
-        try? data.write(to: fileURL, options: .atomic)
+        JournalFile.save(entries)
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }
