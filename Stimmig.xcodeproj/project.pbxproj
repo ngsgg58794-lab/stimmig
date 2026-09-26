@@ -22,7 +22,43 @@
 		E6F513A1EA8B1CFF4BF1E616 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2895428134B58B663F8CA8A /* JournalEntry.swift */; };
 		E9CF5180BF2D180A1DE34738 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37F3FBAACABA67DB44E656 /* Emotion.swift */; };
 		FD8EC5B94FF592ACE9407E0F /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F8C13297BE4BB25890A90 /* ResultView.swift */; };
+		D6E019D76683015C307C66FB /* JournalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B5F0A1F51112345B2A18A /* JournalFile.swift */; };
+		1A52EEC9A70CE1207EAA061F /* JournalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761F4D72C92118379CF8FE95 /* JournalStats.swift */; };
+		5971684C8F4C164F9DF177E9 /* HealthSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F757E2F007A2214BD1CA37D0 /* HealthSync.swift */; };
+		3D6C12B8FE065E1D8CA71E49 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FDFACEEA982D1ECDBFF140 /* Reminder.swift */; };
+		0463A348C9DCC038A8D32DFA /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121567653DE6CC058C2A72B /* InsightsView.swift */; };
+		FD4946A60EB2C64505426784 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE861F1F8DCDE4E92F41CF50 /* SettingsView.swift */; };
+		700B296A7C2E56542582AF11 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2895428134B58B663F8CA8A /* JournalEntry.swift */; };
+		AF33717E3B1070CACC52D926 /* JournalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B5F0A1F51112345B2A18A /* JournalFile.swift */; };
+		C0231E8FC05B0CBF83B1D2AE /* JournalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761F4D72C92118379CF8FE95 /* JournalStats.swift */; };
+		E4086BBFB270D8F952AEA50F /* StimmigWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC79866390240B61F647E4 /* StimmigWidget.swift */; };
+		43170BA0FFA480E386AD0FCE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2E9ED1A0728D904E73B47 /* Theme.swift */; };
+		20ABC447C53B262257271E42 /* StimmigWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FE044142E48C3AFC31CCA046 /* StimmigWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCD833EEE0A4A7F0FB583283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AFEB5033B86251313AE92C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79B18E8495794CE58F12EB67;
+			remoteInfo = StimmigWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7391544C2B1CBDCF27132A4E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				20ABC447C53B262257271E42 /* StimmigWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2A3A5F4E323EBA826253276A /* Stimmig.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Stimmig.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +77,17 @@
 		E2895428134B58B663F8CA8A /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		E3A1EA79600913DEFED4C09E /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		E467AA145F49D7650E28202A /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		054B5F0A1F51112345B2A18A /* JournalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalFile.swift; sourceTree = "<group>"; };
+		761F4D72C92118379CF8FE95 /* JournalStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalStats.swift; sourceTree = "<group>"; };
+		F757E2F007A2214BD1CA37D0 /* HealthSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSync.swift; sourceTree = "<group>"; };
+		16FDFACEEA982D1ECDBFF140 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		7121567653DE6CC058C2A72B /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		BE861F1F8DCDE4E92F41CF50 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A7D4A9311FE6EF73CECFD635 /* Stimmig.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stimmig.entitlements; sourceTree = "<group>"; };
+		DBBC79866390240B61F647E4 /* StimmigWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmigWidget.swift; sourceTree = "<group>"; };
+		ABD024E0D534839B311A2998 /* StimmigWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StimmigWidget.entitlements; sourceTree = "<group>"; };
+		31308A7C76722F21B8B5AF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE044142E48C3AFC31CCA046 /* StimmigWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StimmigWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -73,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				2A3A5F4E323EBA826253276A /* Stimmig.app */,
+				FE044142E48C3AFC31CCA046 /* StimmigWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				3F37F3FBAACABA67DB44E656 /* Emotion.swift */,
-				E2895428134B58B663F8CA8A /* JournalEntry.swift */,
 				72E34FE3188B562257566A5A /* JournalStore.swift */,
 			);
 			path = Models;
@@ -93,8 +140,9 @@
 				1CB1C6875D04AFAFB8F10968 /* App */,
 				7034FECC5A4FE2F192E0C076 /* Models */,
 				11880188BD2E59B310C69140 /* Resources */,
-				AA3F5A7AE64694306D2EE5B4 /* Theme */,
+				161CC824849307EECD3BCCD4 /* Services */,
 				86A76F5331F9BC64F0153440 /* Views */,
+				A7D4A9311FE6EF73CECFD635 /* Stimmig.entitlements */,
 			);
 			path = Stimmig;
 			sourceTree = "<group>";
@@ -103,9 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				7123F18CF83C7E63A3086401 /* EmotionWheelCanvas.swift */,
+				7121567653DE6CC058C2A72B /* InsightsView.swift */,
 				C09F55224C7634BA7E8D2A60 /* JournalView.swift */,
 				AE4F8C13297BE4BB25890A90 /* ResultView.swift */,
 				B8DC109B465800E62E437721 /* RootView.swift */,
+				BE861F1F8DCDE4E92F41CF50 /* SettingsView.swift */,
 				E3A1EA79600913DEFED4C09E /* StartView.swift */,
 				E467AA145F49D7650E28202A /* TopBar.swift */,
 				65DCFC755B4C46570C771139 /* WheelScreenView.swift */,
@@ -117,17 +167,41 @@
 		926485BB156CC996FFBBF0DD = {
 			isa = PBXGroup;
 			children = (
+				839C5A266937413A2A494241 /* Shared */,
 				82553795D66C921F1C42F15A /* Stimmig */,
+				6BE3A2A1861E12DCD7DA0205 /* StimmigWidget */,
 				6B8AF876D1CE140F8F268AE5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AA3F5A7AE64694306D2EE5B4 /* Theme */ = {
+		839C5A266937413A2A494241 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E2895428134B58B663F8CA8A /* JournalEntry.swift */,
+				054B5F0A1F51112345B2A18A /* JournalFile.swift */,
+				761F4D72C92118379CF8FE95 /* JournalStats.swift */,
 				BBC2E9ED1A0728D904E73B47 /* Theme.swift */,
 			);
-			path = Theme;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		161CC824849307EECD3BCCD4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F757E2F007A2214BD1CA37D0 /* HealthSync.swift */,
+				16FDFACEEA982D1ECDBFF140 /* Reminder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6BE3A2A1861E12DCD7DA0205 /* StimmigWidget */ = {
+			isa = PBXGroup;
+			children = (
+				31308A7C76722F21B8B5AF8E /* Info.plist */,
+				ABD024E0D534839B311A2998 /* StimmigWidget.entitlements */,
+				DBBC79866390240B61F647E4 /* StimmigWidget.swift */,
+			);
+			path = StimmigWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,10 +213,12 @@
 			buildPhases = (
 				0864B9421A93C47540218902 /* Sources */,
 				4E2A7AD2C7E66545C3D567F5 /* Resources */,
+				7391544C2B1CBDCF27132A4E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DF6C49162125A2CFE5AC65B0 /* PBXTargetDependency */,
 			);
 			name = Stimmig;
 			packageProductDependencies = (
@@ -150,6 +226,24 @@
 			productName = Stimmig;
 			productReference = 2A3A5F4E323EBA826253276A /* Stimmig.app */;
 			productType = "com.apple.product-type.application";
+		};
+		79B18E8495794CE58F12EB67 /* StimmigWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79385ED5D3DE65DEDBC76F0E /* Build configuration list for PBXNativeTarget "StimmigWidget" */;
+			buildPhases = (
+				819B44E6D51EEFF6DFCC04F9 /* Sources */,
+				0846F4966D7B34FF5A712F04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StimmigWidget;
+			packageProductDependencies = (
+			);
+			productName = StimmigWidget;
+			productReference = FE044142E48C3AFC31CCA046 /* StimmigWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -161,6 +255,10 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					2F92FE948CC7D04090EBBE82 = {
+						DevelopmentTeam = 9G5RLWXCJQ;
+						ProvisioningStyle = Automatic;
+					};
+					79B18E8495794CE58F12EB67 = {
 						DevelopmentTeam = 9G5RLWXCJQ;
 						ProvisioningStyle = Automatic;
 					};
@@ -181,6 +279,7 @@
 			projectRoot = "";
 			targets = (
 				2F92FE948CC7D04090EBBE82 /* Stimmig */,
+				79B18E8495794CE58F12EB67 /* StimmigWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +290,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FC710072C9480EC53351AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0846F4966D7B34FF5A712F04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,10 +321,36 @@
 				027ED3B641043F78045AF98C /* TopBar.swift in Sources */,
 				D7E83AC59C73DB346A0AB78E /* WedgeShape.swift in Sources */,
 				C01F65D90E0ECD506E71AE86 /* WheelScreenView.swift in Sources */,
+				D6E019D76683015C307C66FB /* JournalFile.swift in Sources */,
+				1A52EEC9A70CE1207EAA061F /* JournalStats.swift in Sources */,
+				5971684C8F4C164F9DF177E9 /* HealthSync.swift in Sources */,
+				3D6C12B8FE065E1D8CA71E49 /* Reminder.swift in Sources */,
+				0463A348C9DCC038A8D32DFA /* InsightsView.swift in Sources */,
+				FD4946A60EB2C64505426784 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		819B44E6D51EEFF6DFCC04F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700B296A7C2E56542582AF11 /* JournalEntry.swift in Sources */,
+				AF33717E3B1070CACC52D926 /* JournalFile.swift in Sources */,
+				C0231E8FC05B0CBF83B1D2AE /* JournalStats.swift in Sources */,
+				E4086BBFB270D8F952AEA50F /* StimmigWidget.swift in Sources */,
+				43170BA0FFA480E386AD0FCE /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF6C49162125A2CFE5AC65B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79B18E8495794CE58F12EB67 /* StimmigWidget */;
+			targetProxy = BCD833EEE0A4A7F0FB583283 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		81C6AF48608883640864268B /* Release */ = {
@@ -282,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Stimmig/Stimmig.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -305,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Stimmig/Stimmig.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -386,6 +520,52 @@
 			};
 			name = Debug;
 		};
+		BB1E4EC5FB93ED1B66776DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StimmigWidget/StimmigWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G5RLWXCJQ;
+				INFOPLIST_FILE = StimmigWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pinksharkdesign.stimmig.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C7957827CED6327DCCFECFA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StimmigWidget/StimmigWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G5RLWXCJQ;
+				INFOPLIST_FILE = StimmigWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pinksharkdesign.stimmig.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +583,15 @@
 			buildConfigurations = (
 				B1BC0F0B0807F19CA1AEE4CB /* Debug */,
 				AAE0F3B3B4FBB442FEE57F4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		79385ED5D3DE65DEDBC76F0E /* Build configuration list for PBXNativeTarget "StimmigWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1E4EC5FB93ED1B66776DD9 /* Debug */,
+				C7957827CED6327DCCFECFA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

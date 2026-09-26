@@ -1,3 +1,23 @@
+# App Review – Neueinreichung nach Guideline 4.2 (Minimum Functionality)
+
+Diesen Block in App-Review-Informationen → Notizen **vor** den bestehenden Text setzen
+und im Resolution Center antworten:
+
+```
+Following the Guideline 4.2 feedback, this build adds substantial native functionality beyond the feelings wheel and journal:
+
+- Insights (Swift Charts): distribution of core feelings for 7 days / 30 days / all time, a 5-week mood calendar, time-of-day chart, most frequent words and check-in streak. Open via the chart icon in the top bar.
+- Daily reminder: local notification at a user-chosen time (Settings via the gear icon). No server involved.
+- Widgets (WidgetKit): Home Screen (small) and Lock Screen (rectangular, circular, inline) widgets showing the latest feeling and streak; tapping opens the wheel directly.
+- Apple Health integration (iOS 18+, optional): saved feelings are written to Health as State of Mind samples (HKStateOfMind, write-only, nothing is read). Enable in Settings > "In Health speichern".
+
+All data stays on the device. No account, no network requests, no third-party services.
+```
+
+Neue Screen-Aufnahme: zusätzlich Einblicke, Einstellungen (Erinnerung + Health-Freigabe) und das Widget auf dem Home-Bildschirm zeigen.
+
+---
+
 # App Review – Antwort auf Guideline 2.1 (Information Needed)
 
 Text unten (Englisch) 1:1 in **beide** Stellen kopieren:
@@ -32,7 +52,7 @@ No login, account, credentials, sample files or internet connection are required
 All data is stored only locally on the device (a file in the app's Documents directory) and is removed when the app is deleted.
 
 4. EXTERNAL SERVICES
-None. The app uses no backend, no authentication service, no payment processor, no analytics, no advertising SDKs and no AI services. It makes no network requests. It is built exclusively with Apple frameworks (SwiftUI, Foundation).
+None. The app uses no backend, no authentication service, no payment processor, no analytics, no advertising SDKs and no AI services. It makes no network requests. It is built exclusively with Apple frameworks (SwiftUI, Swift Charts, WidgetKit, UserNotifications, HealthKit). HealthKit is used write-only and on-device.
 
 5. REGIONAL DIFFERENCES
 None. The app functions identically in all regions. The user interface and content are in German.

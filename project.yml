@@ -13,10 +13,27 @@ targets:
     platform: iOS
     sources:
       - path: Stimmig
+      - path: Shared
+    dependencies:
+      - target: StimmigWidget
+    entitlements:
+      path: Stimmig/Stimmig.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
+        com.apple.security.application-groups:
+          - group.com.pinksharkdesign.stimmig
     info:
       path: Generated/Info.plist
       properties:
         CFBundleDisplayName: stimmig
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleURLTypes:
+          - CFBundleURLName: com.pinksharkdesign.stimmig
+            CFBundleURLSchemes:
+              - stimmig
+        NSHealthUpdateUsageDescription: stimmig speichert die Gefühle, die du findest, auf Wunsch als Gemütszustand in Apple Health.
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
@@ -35,3 +52,34 @@ targets:
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: 9G5RLWXCJQ
     scheme: {}
+  StimmigWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: StimmigWidget
+      - path: Shared/JournalEntry.swift
+      - path: Shared/JournalFile.swift
+      - path: Shared/JournalStats.swift
+      - path: Shared/Theme.swift
+    entitlements:
+      path: StimmigWidget/StimmigWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.pinksharkdesign.stimmig
+    info:
+      path: StimmigWidget/Info.plist
+      properties:
+        CFBundleDisplayName: stimmig
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pinksharkdesign.stimmig.widget
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: 9G5RLWXCJQ

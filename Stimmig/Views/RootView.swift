@@ -1,7 +1,10 @@
 import SwiftUI
 
 enum Step: Equatable {
-    case start, core, secondary, tertiary, result, journal
+    case start, core, secondary, tertiary, result, journal, insights, settings
+
+    /// Screens opened from the top bar; "zurück" returns to where they were opened from.
+    static let overlays: [Step] = [.journal, .insights, .settings]
 }
 
 struct RootView: View {
@@ -11,7 +14,7 @@ struct RootView: View {
     @State private var coreIndex: Int?
     @State private var subIndex: Int?
     @State private var wordIndex: Int?
-    @State private var journalReturn: Step = .start
+    @State private var returnStep: Step = .start
     @State private var note: String = ""
 
     private var selectedCore: CoreEmotion? {
@@ -27,7 +30,7 @@ struct RootView: View {
             TopBar(
                 step: step,
                 onBack: goBack,
-                onJournal: { journalReturn = step; step = .journal }
+                onOpen: openScreen
             )
             .padding(.horizontal, 22)
             .padding(.top, 8)
@@ -58,12 +61,27 @@ struct RootView: View {
 
                 case .journal:
                     JournalView(store: journalStore, onNew: startFresh)
+
+                case .insights:
+                    InsightsView(store: journalStore, onNew: startFresh)
+
+                case .settings:
+                    SettingsView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 22)
         }
         .background(AppColor.background.ignoresSafeArea())
+        .onOpenURL { url in
+            // Widget tap: stimmig://new jumps straight into the wheel.
+            if url.host == "new" { startFresh() }
+        }
+    }
+
+    private func openScreen(_ target: Step) {
+        if !Step.overlays.contains(step) { returnStep = step }
+        step = target
     }
 
     private func startFresh() {
@@ -75,8 +93,8 @@ struct RootView: View {
 
     private func goBack() {
         switch step {
-        case .journal:
-            step = journalReturn
+        case .journal, .insights, .settings:
+            step = returnStep
         case .core:
             step = .start
         case .secondary:
@@ -101,5 +119,6 @@ struct RootView: View {
             note: note.trimmingCharacters(in: .whitespacesAndNewlines)
         )
         journalStore.add(entry)
+        HealthSettings.saveIfEnabled(entry)
     }
 }

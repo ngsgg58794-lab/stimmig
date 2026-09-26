@@ -3,7 +3,7 @@ import SwiftUI
 struct TopBar: View {
     let step: Step
     let onBack: () -> Void
-    let onJournal: () -> Void
+    let onOpen: (Step) -> Void
 
     private var isWheelStep: Bool {
         step == .core || step == .secondary || step == .tertiary
@@ -30,8 +30,8 @@ struct TopBar: View {
 
             Spacer()
 
-            HStack(spacing: 12) {
-                if isWheelStep || step == .journal {
+            HStack(spacing: 8) {
+                if isWheelStep || Step.overlays.contains(step) {
                     Button(action: onBack) {
                         Text("‹ zurück")
                             .font(.system(size: 14, weight: .semibold))
@@ -49,7 +49,9 @@ struct TopBar: View {
                     }
                 }
                 if step == .start || step == .result {
-                    Button(action: onJournal) {
+                    iconButton("chart.bar.xaxis", label: "Einblicke") { onOpen(.insights) }
+                    iconButton("gearshape", label: "Einstellungen") { onOpen(.settings) }
+                    Button(action: { onOpen(.journal) }) {
                         HStack(spacing: 6) {
                             Image(systemName: "book.closed")
                                 .font(.system(size: 12, weight: .semibold))
@@ -66,5 +68,17 @@ struct TopBar: View {
             }
         }
         .frame(height: 40)
+    }
+
+    private func iconButton(_ systemName: String, label: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .font(.system(size: 14, weight: .semibold))
+                .frame(width: 34, height: 34)
+                .background(AppColor.highlightSoft)
+                .foregroundStyle(AppColor.highlight)
+                .clipShape(Circle())
+        }
+        .accessibilityLabel(label)
     }
 }

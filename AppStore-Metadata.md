@@ -44,9 +44,20 @@ Jedes gefundene Gefühl kannst du in deinem persönlichen Tagebuch speichern
 und später wieder nachlesen – so entsteht mit der Zeit ein Gefühl dafür,
 was dich bewegt.
 
+Mehr als ein Tagebuch:
+• Einblicke: Welche Grundgefühle überwiegen? Wann checkst du ein? Dein
+  Gefühlskalender der letzten Wochen und deine häufigsten Worte
+• Tägliche Erinnerung zu deiner Wunschzeit
+• Widget für Home- und Sperrbildschirm mit deinem letzten Gefühl und
+  deiner Serie
+• Apple Health (ab iOS 18, optional): Gefühle als Gemütszustand in Health
+  speichern
+
 Privatsphäre first: stimmig braucht kein Konto, keine Anmeldung und keine
 Internetverbindung. Alle Einträge bleiben ausschließlich auf deinem Gerät.
 Keine Werbung, kein Tracking, keine Analyse-Tools.
+
+stimmig ist kein Medizinprodukt und ersetzt keine Therapie.
 ```
 
 **Untertitel/Slogan für Werbetext** (Promotional Text, max. 170 Zeichen,
@@ -90,7 +101,9 @@ Frage: "Erhebt diese App Daten?"
 → **Nein, diese App erhebt keine Daten** ("No, this app does not collect
 any data from this app.")
 
-Begründung: stimmig speichert alles ausschließlich lokal auf dem Gerät,
+Begründung: stimmig speichert alles ausschließlich lokal auf dem Gerät
+(auch das Schreiben nach Apple Health bleibt auf dem Gerät und zählt
+laut Apple nicht als „Erheben“),
 es gibt keine Server-Kommunikation, kein Tracking, keine Analyse- oder
 Werbe-SDKs, kein Nutzerkonto.
 
