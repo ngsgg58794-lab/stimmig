@@ -12,6 +12,7 @@ struct ResultView: View {
     @State private var pulse = false
     @State private var questionIndex = 0
     @State private var exercise: Exercise?
+    @FocusState private var noteFocused: Bool
 
     private var questions: [String] { Reflection.questions(core: core.name, sub: sub.name) }
     private var question: String { questions[questionIndex % questions.count] }
@@ -69,6 +70,14 @@ struct ResultView: View {
 
                 TextField("Deine Antwort (optional)", text: $note, axis: .vertical)
                     .lineLimit(2...4)
+                    .focused($noteFocused)
+                    .submitLabel(.done)
+                    .onChange(of: note) { text in
+                        // Multi-line fields insert a newline on Return; treat it as "Fertig" instead.
+                        guard text.contains("\n") else { return }
+                        note = text.replacingOccurrences(of: "\n", with: "")
+                        noteFocused = false
+                    }
                     .font(.system(size: 14))
                     .padding(12)
                     .frame(maxWidth: 330)
@@ -79,6 +88,7 @@ struct ResultView: View {
 
                 VStack(spacing: 8) {
                     Button(action: {
+                        noteFocused = false
                         let trimmed = note.trimmingCharacters(in: .whitespacesAndNewlines)
                         onSave(trimmed.isEmpty ? nil : question)
                         saved = true
@@ -94,7 +104,7 @@ struct ResultView: View {
                     }
                     .disabled(saved)
 
-                    Button(action: { exercise = Exercise.forCore(core) }) {
+                    Button(action: { noteFocused = false; exercise = Exercise.forCore(core) }) {
                         Label("Übung: \(Exercise.forCore(core).title)", systemImage: "wind")
                             .font(.display(16))
                             .foregroundStyle(AppColor.highlight)
@@ -116,6 +126,20 @@ struct ResultView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
+            // Tapping anywhere outside the text field hides the keyboard.
+            .background(
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture { noteFocused = false }
+            )
+        }
+        .scrollDismissesKeyboard(.interactively)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Fertig") { noteFocused = false }
+                    .fontWeight(.semibold)
+            }
         }
         .onAppear {
             saved = false
