@@ -25,6 +25,9 @@ struct EmotionWheelCanvas: View {
     let onPickSub: (Int) -> Void
     let onPickWord: (Int) -> Void
 
+    /// Segment that was just tapped; it grows outward before the wheel moves on.
+    @State private var picked: Int?
+
     var body: some View {
         GeometryReader { geo in
             let scale = geo.size.width / WheelGeometry.viewBoxSize
@@ -80,27 +83,40 @@ struct EmotionWheelCanvas: View {
         let span = 360.0 / Double(n)
         let innerR = (band.mid - band.thickness / 2) * scale
         let outerR = (band.mid + band.thickness / 2) * scale
+        let grownR = outerR + 12 * scale
 
         ForEach(0..<n, id: \.self) { i in
             let a0 = Double(i) * span
             let a1 = Double(i + 1) * span
             let midAngle = (a0 + a1) / 2
-            let wedge = WedgeShape(innerRadius: innerR, outerRadius: outerR, startAngle: a0 + 1, endAngle: a1 - 1, center: center)
+            let isPicked = picked == i
+            let wedge = WedgeShape(
+                innerRadius: innerR, outerRadius: isPicked ? grownR : outerR,
+                startAngle: a0 + 1, endAngle: a1 - 1, center: center
+            )
 
             wedge
                 .fill(colorFor(i))
-                .overlay(wedge.stroke(Color.white, lineWidth: 2))
+                .overlay(wedge.stroke(AppColor.background, lineWidth: 2))
+                .opacity(picked == nil || isPicked ? 1 : 0.45)
                 .contentShape(wedge)
-                .onTapGesture { onPick(i) }
+                .onTapGesture { pick(i, then: onPick) }
                 .overlay(
                     Text(labels[i])
                         .font(.display(labels[i].count > 11 ? 10.5 : 12.5, weight: .bold))
-                        .foregroundStyle(AppColor.ink)
+                        .foregroundStyle(AppColor.onEmotion)
                         .lineLimit(1)
                         .minimumScaleFactor(0.7)
                         .position(polarPoint(band.mid * scale, midAngle, center: center))
                         .allowsHitTesting(false)
                 )
         }
+    }
+
+    private func pick(_ i: Int, then onPick: @escaping (Int) -> Void) {
+        guard picked == nil else { return }
+        Haptics.tap()
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.6)) { picked = i }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.22) { onPick(i) }
     }
 }

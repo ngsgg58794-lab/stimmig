@@ -33,6 +33,8 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSFaceIDUsageDescription</key>
+	<string>stimmig nutzt Face ID, um dein Tagebuch zu schützen.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>stimmig speichert die Gefühle, die du findest, auf Wunsch als Gemütszustand in Apple Health.</string>
 	<key>UILaunchScreen</key>

@@ -9,6 +9,8 @@ enum Step: Equatable {
 
 struct RootView: View {
     @StateObject private var journalStore = JournalStore()
+    @StateObject private var appLock = AppLock()
+    @Environment(\.scenePhase) private var scenePhase
 
     @State private var step: Step = .start
     @State private var coreIndex: Int?
@@ -54,7 +56,7 @@ struct RootView: View {
                     if let core = selectedCore, let sub = selectedSub, let wi = wordIndex {
                         ResultView(
                             core: core, sub: sub, word: sub.words[wi], note: $note,
-                            onSave: { saveEntry(core: core, sub: sub, word: sub.words[wi]) },
+                            onSave: { question in saveEntry(core: core, sub: sub, word: sub.words[wi], question: question) },
                             onAgain: startFresh
                         )
                     }
@@ -77,9 +79,37 @@ struct RootView: View {
             // Widget tap: stimmig://new jumps straight into the wheel.
             if url.host == "new" { startFresh() }
         }
+        .onReceive(NotificationCenter.default.publisher(for: OpenWheelRequest.notification)) { _ in
+            if OpenWheelRequest.consume() { startFresh() }
+        }
+        .onAppear {
+            if OpenWheelRequest.consume() { startFresh() }
+        }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                // Siri / Control Center button may have asked for the wheel while we were in the background.
+                if OpenWheelRequest.consume() { startFresh() }
+            case .background:
+                appLock.lock()
+                if step == .journal || step == .insights { step = .start }
+            default:
+                break
+            }
+        }
     }
 
     private func openScreen(_ target: Step) {
+        guard target == .journal || target == .insights else {
+            show(target)
+            return
+        }
+        Task { @MainActor in
+            if await appLock.unlockIfNeeded() { show(target) }
+        }
+    }
+
+    private func show(_ target: Step) {
         if !Step.overlays.contains(step) { returnStep = step }
         step = target
     }
@@ -108,7 +138,7 @@ struct RootView: View {
         }
     }
 
-    private func saveEntry(core: CoreEmotion, sub: SubEmotion, word: String) {
+    private func saveEntry(core: CoreEmotion, sub: SubEmotion, word: String, question: String?) {
         let entry = JournalEntry(
             id: UUID().uuidString,
             timestamp: Date(),
@@ -116,7 +146,8 @@ struct RootView: View {
             subName: sub.name,
             word: word,
             colorHex: core.hex,
-            note: note.trimmingCharacters(in: .whitespacesAndNewlines)
+            note: note.trimmingCharacters(in: .whitespacesAndNewlines),
+            question: question
         )
         journalStore.add(entry)
         HealthSettings.saveIfEnabled(entry)

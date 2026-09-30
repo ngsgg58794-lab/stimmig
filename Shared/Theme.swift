@@ -2,19 +2,30 @@ import SwiftUI
 import UIKit
 
 enum AppColor {
-    static let background = Color(hex: "#FBFAF7")
-    static let ink = Color(hex: "#16130F")
-    static let muted = Color(hex: "#7A736B")
-    static let line = Color(hex: "#ECE7DF")
-    static let card = Color(hex: "#FFFFFF")
+    static let background = Color(light: "#FBFAF7", dark: "#141110")
+    static let ink = Color(light: "#16130F", dark: "#F3EFE9")
+    static let muted = Color(light: "#7A736B", dark: "#9D958B")
+    static let line = Color(light: "#ECE7DF", dark: "#2F2A25")
+    static let card = Color(light: "#FFFFFF", dark: "#1F1B18")
     static let highlight = Color(hex: "#FF2D78")
-    static let highlightSoft = Color(hex: "#FFE3EE")
-    static let ghostRing = Color(hex: "#EEE9E1")
-    static let bodyText = Color(hex: "#3A342E")
+    static let highlightSoft = Color(light: "#FFE3EE", dark: "#3D1A28")
+    static let ghostRing = Color(light: "#EEE9E1", dark: "#2A2521")
+    static let bodyText = Color(light: "#3A342E", dark: "#D8D1C8")
     static let saved = Color(hex: "#1FBF75")
+    /// Text on the pastel emotion colours — stays dark in both appearances.
+    static let onEmotion = Color(hex: "#16130F")
 }
 
 extension Color {
+    /// A colour that follows the system appearance (light/dark).
+    init(light: String, dark: String) {
+        let lightColor = UIColor(Color(hex: light))
+        let darkColor = UIColor(Color(hex: dark))
+        self.init(uiColor: UIColor { traits in
+            traits.userInterfaceStyle == .dark ? darkColor : lightColor
+        })
+    }
+
     init(hex: String) {
         let cleaned = hex.trimmingCharacters(in: CharacterSet(charactersIn: "#"))
         var value: UInt64 = 0

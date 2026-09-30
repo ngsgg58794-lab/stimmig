@@ -34,6 +34,15 @@
 		E4086BBFB270D8F952AEA50F /* StimmigWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC79866390240B61F647E4 /* StimmigWidget.swift */; };
 		43170BA0FFA480E386AD0FCE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2E9ED1A0728D904E73B47 /* Theme.swift */; };
 		20ABC447C53B262257271E42 /* StimmigWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FE044142E48C3AFC31CCA046 /* StimmigWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D84AF2940D0FD8EDD7EF4253 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBA5843D8BBE9ABD23972C4 /* Haptics.swift */; };
+		F315ED88DBE69198B11FEA84 /* AppLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C13E75154D789617CC0020C /* AppLock.swift */; };
+		CB1A93E015AB53DF075C988C /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A0B1677DD0CFCBE54C6B3 /* Reflection.swift */; };
+		1C8925FF1B8367A7F6FD102F /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4412A54C344F60BB9217 /* ExerciseView.swift */; };
+		CDB9717B4E4A999CF2A230B0 /* MonthRecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A91DB9B7001B69841E85985 /* MonthRecapView.swift */; };
+		8E67515A256CFBA4FFBB5AEA /* StimmigShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D853E234B6E36DAF009B7 /* StimmigShortcuts.swift */; };
+		53F72316AE3AB6A442C47A67 /* OpenWheelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22D3DE6C897FFAD31FFFD /* OpenWheelIntent.swift */; };
+		CE5ACB033E817423F9684FA0 /* OpenWheelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22D3DE6C897FFAD31FFFD /* OpenWheelIntent.swift */; };
+		CC70BF83578179AE01D695D0 /* StimmigControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8C0A4893B5C5DF55D94DE /* StimmigControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +97,14 @@
 		ABD024E0D534839B311A2998 /* StimmigWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StimmigWidget.entitlements; sourceTree = "<group>"; };
 		31308A7C76722F21B8B5AF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE044142E48C3AFC31CCA046 /* StimmigWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StimmigWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCBA5843D8BBE9ABD23972C4 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		4C13E75154D789617CC0020C /* AppLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLock.swift; sourceTree = "<group>"; };
+		9A1A0B1677DD0CFCBE54C6B3 /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
+		806C4412A54C344F60BB9217 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		8A91DB9B7001B69841E85985 /* MonthRecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthRecapView.swift; sourceTree = "<group>"; };
+		836D853E234B6E36DAF009B7 /* StimmigShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmigShortcuts.swift; sourceTree = "<group>"; };
+		BEF22D3DE6C897FFAD31FFFD /* OpenWheelIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWheelIntent.swift; sourceTree = "<group>"; };
+		F9F8C0A4893B5C5DF55D94DE /* StimmigControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmigControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -102,6 +119,7 @@
 		1CB1C6875D04AFAFB8F10968 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				836D853E234B6E36DAF009B7 /* StimmigShortcuts.swift */,
 				9973F2A01A83B2290D1E3D4A /* StimmigApp.swift */,
 			);
 			path = App;
@@ -128,6 +146,7 @@
 		7034FECC5A4FE2F192E0C076 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9A1A0B1677DD0CFCBE54C6B3 /* Reflection.swift */,
 				3F37F3FBAACABA67DB44E656 /* Emotion.swift */,
 				72E34FE3188B562257566A5A /* JournalStore.swift */,
 			);
@@ -150,6 +169,8 @@
 		86A76F5331F9BC64F0153440 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A91DB9B7001B69841E85985 /* MonthRecapView.swift */,
+				806C4412A54C344F60BB9217 /* ExerciseView.swift */,
 				7123F18CF83C7E63A3086401 /* EmotionWheelCanvas.swift */,
 				7121567653DE6CC058C2A72B /* InsightsView.swift */,
 				C09F55224C7634BA7E8D2A60 /* JournalView.swift */,
@@ -177,6 +198,7 @@
 		839C5A266937413A2A494241 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BEF22D3DE6C897FFAD31FFFD /* OpenWheelIntent.swift */,
 				E2895428134B58B663F8CA8A /* JournalEntry.swift */,
 				054B5F0A1F51112345B2A18A /* JournalFile.swift */,
 				761F4D72C92118379CF8FE95 /* JournalStats.swift */,
@@ -188,6 +210,8 @@
 		161CC824849307EECD3BCCD4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4C13E75154D789617CC0020C /* AppLock.swift */,
+				DCBA5843D8BBE9ABD23972C4 /* Haptics.swift */,
 				F757E2F007A2214BD1CA37D0 /* HealthSync.swift */,
 				16FDFACEEA982D1ECDBFF140 /* Reminder.swift */,
 			);
@@ -197,6 +221,7 @@
 		6BE3A2A1861E12DCD7DA0205 /* StimmigWidget */ = {
 			isa = PBXGroup;
 			children = (
+				F9F8C0A4893B5C5DF55D94DE /* StimmigControl.swift */,
 				31308A7C76722F21B8B5AF8E /* Info.plist */,
 				ABD024E0D534839B311A2998 /* StimmigWidget.entitlements */,
 				DBBC79866390240B61F647E4 /* StimmigWidget.swift */,
@@ -265,11 +290,11 @@
 				};
 			};
 			buildConfigurationList = 0872CD6631DF1FBA9C147795 /* Build configuration list for PBXProject "Stimmig" */;
-			developmentRegion = en;
+			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				en,
+				de,
 			);
 			mainGroup = 926485BB156CC996FFBBF0DD;
 			minimizedProjectReferenceProxies = 1;
@@ -307,6 +332,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F72316AE3AB6A442C47A67 /* OpenWheelIntent.swift in Sources */,
+				8E67515A256CFBA4FFBB5AEA /* StimmigShortcuts.swift in Sources */,
+				CDB9717B4E4A999CF2A230B0 /* MonthRecapView.swift in Sources */,
+				1C8925FF1B8367A7F6FD102F /* ExerciseView.swift in Sources */,
+				CB1A93E015AB53DF075C988C /* Reflection.swift in Sources */,
+				F315ED88DBE69198B11FEA84 /* AppLock.swift in Sources */,
+				D84AF2940D0FD8EDD7EF4253 /* Haptics.swift in Sources */,
 				176A8D99E2BE8AD1C717F66F /* BrandMark.swift in Sources */,
 				E9CF5180BF2D180A1DE34738 /* Emotion.swift in Sources */,
 				288DCC054AE836717F8DBC71 /* EmotionWheelCanvas.swift in Sources */,
@@ -334,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC70BF83578179AE01D695D0 /* StimmigControl.swift in Sources */,
+				CE5ACB033E817423F9684FA0 /* OpenWheelIntent.swift in Sources */,
 				700B296A7C2E56542582AF11 /* JournalEntry.swift in Sources */,
 				AF33717E3B1070CACC52D926 /* JournalFile.swift in Sources */,
 				C0231E8FC05B0CBF83B1D2AE /* JournalStats.swift in Sources */,

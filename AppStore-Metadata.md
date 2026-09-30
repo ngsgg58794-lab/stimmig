@@ -52,6 +52,13 @@ Mehr als ein Tagebuch:
   deiner Serie
 • Apple Health (ab iOS 18, optional): Gefühle als Gemütszustand in Health
   speichern
+• Frage an dich: eine passende Reflexionsfrage zu jedem Gefühl
+• 1-Minuten-Übungen: Atmung, Erdung, Mitgefühl oder Genießen – passend
+  zu deinem Gefühl
+• Monatsrückblick: dein Gefühlsmosaik als Bild zum Teilen
+• Siri („Wie fühle ich mich mit stimmig“) und Button im Kontrollzentrum
+• Tagebuch-Sperre mit Face ID
+• Dunkelmodus
 
 Privatsphäre first: stimmig braucht kein Konto, keine Anmeldung und keine
 Internetverbindung. Alle Einträge bleiben ausschließlich auf deinem Gerät.

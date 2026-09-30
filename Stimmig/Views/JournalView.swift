@@ -76,6 +76,12 @@ private struct JournalEntryRow: View {
                 Text("\(entry.coreName) › \(entry.subName) · \(formattedDate)")
                     .font(.system(size: 12.5))
                     .foregroundStyle(AppColor.muted)
+                if let question = entry.question, !entry.note.isEmpty {
+                    Text(question)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(AppColor.muted)
+                        .padding(.top, 4)
+                }
                 if !entry.note.isEmpty {
                     Text(entry.note)
                         .font(.system(size: 13.5))

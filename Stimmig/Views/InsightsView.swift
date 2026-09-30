@@ -6,6 +6,8 @@ struct InsightsView: View {
     let onNew: () -> Void
 
     @State private var range: InsightRange = .week
+    @State private var recapMonth = Date()
+    @State private var recapImage: Image?
 
     private var calendar: Calendar {
         var cal = Calendar.current
@@ -61,6 +63,7 @@ struct InsightsView: View {
                         calendarCard
                         dayTimeChart
                         topWords
+                        recapCard
                     }
                     .padding(.bottom, 12)
                 }
@@ -165,7 +168,7 @@ struct InsightsView: View {
                         .overlay(
                             Text("\(calendar.component(.day, from: day))")
                                 .font(.system(size: 11, weight: day == today ? .bold : .regular))
-                                .foregroundStyle(entry == nil ? AppColor.muted : AppColor.ink)
+                                .foregroundStyle(entry == nil ? AppColor.muted : AppColor.onEmotion)
                         )
                         .overlay(
                             RoundedRectangle(cornerRadius: 7)
@@ -263,6 +266,74 @@ struct InsightsView: View {
                 }
             }
         }
+    }
+
+    // MARK: - Month recap
+
+    private var recap: MonthRecap {
+        MonthRecap(month: recapMonth, entries: store.entries, calendar: calendar)
+    }
+
+    private var isCurrentMonth: Bool {
+        calendar.isDate(recapMonth, equalTo: Date(), toGranularity: .month)
+    }
+
+    private var recapCard: some View {
+        InsightCard(title: "Monatsrückblick", subtitle: "Dein Gefühlsmosaik zum Teilen") {
+            VStack(spacing: 12) {
+                HStack {
+                    Button { shiftMonth(-1) } label: { Image(systemName: "chevron.left") }
+                        .accessibilityLabel("Vorheriger Monat")
+                    Spacer()
+                    Text(recap.title)
+                        .font(.system(size: 15, weight: .semibold))
+                    Spacer()
+                    Button { shiftMonth(1) } label: { Image(systemName: "chevron.right") }
+                        .disabled(isCurrentMonth)
+                        .accessibilityLabel("Nächster Monat")
+                }
+                .foregroundStyle(AppColor.highlight)
+
+                MonthRecapView(recap: recap)
+                    .scaleEffect(0.75)
+                    .frame(width: 270, height: 337.5)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .overlay(RoundedRectangle(cornerRadius: 14).stroke(AppColor.line))
+
+                if let recapImage {
+                    ShareLink(
+                        item: recapImage,
+                        preview: SharePreview("Mein \(recap.title) mit stimmig", image: recapImage)
+                    ) {
+                        Label("Teilen", systemImage: "square.and.arrow.up")
+                            .font(.display(16))
+                            .foregroundStyle(.white)
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 26)
+                            .background(AppColor.highlight)
+                            .clipShape(Capsule())
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .onAppear { renderRecap() }
+        .onChange(of: recapMonth) { _ in renderRecap() }
+        .onChange(of: store.entries.count) { _ in renderRecap() }
+    }
+
+    private func shiftMonth(_ delta: Int) {
+        if let month = calendar.date(byAdding: .month, value: delta, to: recapMonth) {
+            recapMonth = month
+        }
+    }
+
+    /// Renders the mosaic at 3× (1080×1350 px) for sharing.
+    @MainActor
+    private func renderRecap() {
+        let renderer = ImageRenderer(content: MonthRecapView(recap: recap).environment(\.colorScheme, .light))
+        renderer.scale = 3
+        recapImage = renderer.uiImage.map { Image(uiImage: $0) }
     }
 
     private var emptyRangeText: some View {

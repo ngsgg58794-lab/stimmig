@@ -17,6 +17,12 @@ struct WedgeShape: Shape {
     var endAngle: Double
     var center: CGPoint
 
+    /// Lets the outer edge animate, so a picked segment can grow outward smoothly.
+    var animatableData: CGFloat {
+        get { outerRadius }
+        set { outerRadius = newValue }
+    }
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let steps = max(2, Int(abs(endAngle - startAngle) / 3))

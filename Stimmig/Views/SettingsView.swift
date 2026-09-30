@@ -1,11 +1,13 @@
 import SwiftUI
 import UIKit
+import WidgetKit
 
 struct SettingsView: View {
     @AppStorage(Reminder.enabledKey) private var reminderEnabled = false
     @AppStorage(Reminder.hourKey) private var reminderHour = 20
     @AppStorage(Reminder.minuteKey) private var reminderMinute = 0
     @AppStorage(HealthSettings.enabledKey) private var healthEnabled = false
+    @AppStorage(LockSettings.enabledKey, store: LockSettings.store) private var lockEnabled = false
 
     @State private var notificationsDenied = false
     @State private var healthDenied = false
@@ -37,6 +39,7 @@ struct SettingsView: View {
             ScrollView {
                 VStack(spacing: 14) {
                     reminderCard
+                    lockCard
                     if HealthSettings.isSupported {
                         healthCard
                     }
@@ -89,6 +92,25 @@ struct SettingsView: View {
         }
     }
 
+    private var lockCard: some View {
+        let biometry = AppLock.biometryName
+        return InsightCard(title: "Tagebuch sperren", subtitle: "Tagebuch und Einblicke nur mit \(biometry) öffnen.") {
+            VStack(alignment: .leading, spacing: 8) {
+                Toggle(isOn: Binding(get: { lockEnabled }, set: setLock)) {
+                    Text("Mit \(biometry) schützen")
+                        .font(.system(size: 15, weight: .semibold))
+                }
+                .tint(AppColor.highlight)
+
+                if lockEnabled {
+                    Text("Das Widget zeigt dann kein Gefühlswort mehr an.")
+                        .font(.system(size: 12.5))
+                        .foregroundStyle(AppColor.muted)
+                }
+            }
+        }
+    }
+
     private var privacyCard: some View {
         InsightCard(title: "Privatsphäre", subtitle: nil) {
             Text("Kein Konto, keine Werbung, kein Tracking. Deine Einträge bleiben auf deinem iPhone.")
@@ -123,6 +145,16 @@ struct SettingsView: View {
             let granted = await Reminder.enable(hour: reminderHour, minute: reminderMinute)
             reminderEnabled = granted
             notificationsDenied = !granted
+        }
+    }
+
+    /// Turning the lock on or off both require authenticating once.
+    private func setLock(_ on: Bool) {
+        Task { @MainActor in
+            let reason = on ? "Tagebuch-Sperre aktivieren." : "Tagebuch-Sperre deaktivieren."
+            guard await AppLock.authenticate(reason: reason) else { return }
+            lockEnabled = on
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 

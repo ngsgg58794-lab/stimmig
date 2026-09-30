@@ -1,5 +1,6 @@
 name: Stimmig
 options:
+  developmentLanguage: de
   bundleIdPrefix: com.pinksharkdesign
   deploymentTarget:
     iOS: "16.0"
@@ -33,6 +34,7 @@ targets:
           - CFBundleURLName: com.pinksharkdesign.stimmig
             CFBundleURLSchemes:
               - stimmig
+        NSFaceIDUsageDescription: stimmig nutzt Face ID, um dein Tagebuch zu schützen.
         NSHealthUpdateUsageDescription: stimmig speichert die Gefühle, die du findest, auf Wunsch als Gemütszustand in Apple Health.
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
@@ -60,6 +62,7 @@ targets:
       - path: Shared/JournalEntry.swift
       - path: Shared/JournalFile.swift
       - path: Shared/JournalStats.swift
+      - path: Shared/OpenWheelIntent.swift
       - path: Shared/Theme.swift
     entitlements:
       path: StimmigWidget/StimmigWidget.entitlements
