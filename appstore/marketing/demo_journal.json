@@ -1,0 +1,342 @@
+[
+ {
+  "id": "17C84670-897E-4324-8679-3F6C991AC3B5",
+  "timestamp": "2026-09-30T05:58:00Z",
+  "coreName": "freudig",
+  "subName": "gut gelaunt",
+  "word": "spielerisch",
+  "colorHex": "#C2CF74",
+  "note": ""
+ },
+ {
+  "id": "1FE5636C-A0C5-4E28-B5E8-FF598FD3E9B4",
+  "timestamp": "2026-09-29T11:13:00Z",
+  "coreName": "zornig",
+  "subName": "eifersüchtig",
+  "word": "wütend",
+  "colorHex": "#E87E7E",
+  "note": "Meeting lief komplett aneinander vorbei.",
+  "question": "Was wünschst du dir eigentlich?"
+ },
+ {
+  "id": "FFEFD270-C638-4947-83CC-B9D942C58EAD",
+  "timestamp": "2026-09-28T19:47:00Z",
+  "coreName": "freudig",
+  "subName": "euphorisch",
+  "word": "jubilieren",
+  "colorHex": "#C2CF74",
+  "note": ""
+ },
+ {
+  "id": "2B62AE48-2C7D-40C9-8196-8BF4B3433E6A",
+  "timestamp": "2026-09-27T18:42:00Z",
+  "coreName": "überrascht",
+  "subName": "verwirrt",
+  "word": "verblüfft",
+  "colorHex": "#EFA85C",
+  "note": ""
+ },
+ {
+  "id": "ACE5F873-23C6-4A48-88C6-10F95ADE9E2F",
+  "timestamp": "2026-09-27T06:08:00Z",
+  "coreName": "liebend",
+  "subName": "friedlich",
+  "word": "ruhig",
+  "colorHex": "#F3D14E",
+  "note": "Kleine Überraschung von Max.",
+  "question": "Was hat dir heute Ruhe geschenkt?"
+ },
+ {
+  "id": "2E7A4E7C-CDCA-4721-BDE3-6A64C071AF10",
+  "timestamp": "2026-09-26T06:51:00Z",
+  "coreName": "liebend",
+  "subName": "verzaubert",
+  "word": "begeistert",
+  "colorHex": "#F3D14E",
+  "note": ""
+ },
+ {
+  "id": "A3C27804-ACDF-4A59-B9F2-33865232F98A",
+  "timestamp": "2026-09-25T18:58:00Z",
+  "coreName": "traurig",
+  "subName": "schuldbewusst",
+  "word": "reumütig",
+  "colorHex": "#80C9A6",
+  "note": ""
+ },
+ {
+  "id": "F40A5EFF-65A5-455B-8CDF-786CA63D9F89",
+  "timestamp": "2026-09-25T17:50:00Z",
+  "coreName": "zornig",
+  "subName": "wütend",
+  "word": "nachtragend",
+  "colorHex": "#E87E7E",
+  "note": ""
+ },
+ {
+  "id": "273BEE35-25F9-401B-8B1F-4627205BFC6E",
+  "timestamp": "2026-09-24T10:06:00Z",
+  "coreName": "überrascht",
+  "subName": "erschrocken",
+  "word": "schockiert",
+  "colorHex": "#EFA85C",
+  "note": "Unerwartete Nachricht von einem alten Freund.",
+  "question": "Was ist gerade passiert?"
+ },
+ {
+  "id": "7EFDB605-5C60-41CE-AD26-DB067B8DF218",
+  "timestamp": "2026-09-23T10:44:00Z",
+  "coreName": "zornig",
+  "subName": "kritisch",
+  "word": "abweisend",
+  "colorHex": "#E87E7E",
+  "note": ""
+ },
+ {
+  "id": "F8222326-C323-4D37-9374-B1ADAA7AC5C9",
+  "timestamp": "2026-09-22T10:33:00Z",
+  "coreName": "zornig",
+  "subName": "kritisch",
+  "word": "skeptisch",
+  "colorHex": "#E87E7E",
+  "note": ""
+ },
+ {
+  "id": "B492A8D3-1586-45FB-832F-486281A8E97F",
+  "timestamp": "2026-09-21T10:39:00Z",
+  "coreName": "traurig",
+  "subName": "schuldbewusst",
+  "word": "beschämt",
+  "colorHex": "#80C9A6",
+  "note": ""
+ },
+ {
+  "id": "138D9CCE-D036-4359-8A2D-5FE2C7058E45",
+  "timestamp": "2026-09-20T11:33:00Z",
+  "coreName": "furchtsam",
+  "subName": "nervös",
+  "word": "besorgt",
+  "colorHex": "#B49BD8",
+  "note": "Präsentation morgen früh.",
+  "question": "Was steht dir bevor?"
+ },
+ {
+  "id": "0D8228E6-72D1-4D40-BF95-D334ADB53154",
+  "timestamp": "2026-09-19T19:01:00Z",
+  "coreName": "liebend",
+  "subName": "verzaubert",
+  "word": "fasziniert",
+  "colorHex": "#F3D14E",
+  "note": "Kleine Überraschung von Max.",
+  "question": "Was hat dich so fasziniert?"
+ },
+ {
+  "id": "9F8056F3-B56D-46F8-A15D-B8B365E391C1",
+  "timestamp": "2026-09-19T06:47:00Z",
+  "coreName": "liebend",
+  "subName": "friedlich",
+  "word": "ruhig",
+  "colorHex": "#F3D14E",
+  "note": "Abend mit Freunden, einfach schön.",
+  "question": "Was hat dir heute Ruhe geschenkt?"
+ },
+ {
+  "id": "D6CB754B-9E61-44F3-91CA-45CC0E98F116",
+  "timestamp": "2026-09-18T06:54:00Z",
+  "coreName": "traurig",
+  "subName": "gelangweilt",
+  "word": "apathisch",
+  "colorHex": "#80C9A6",
+  "note": ""
+ },
+ {
+  "id": "7B2FEDDA-EEF5-4135-B632-8C3733FC6750",
+  "timestamp": "2026-09-16T06:55:00Z",
+  "coreName": "überrascht",
+  "subName": "erstaunt",
+  "word": "scheu",
+  "colorHex": "#EFA85C",
+  "note": "Das Angebot kam völlig überraschend.",
+  "question": "Was hat dich gerade staunen lassen?"
+ },
+ {
+  "id": "6291C760-6F6E-455E-8739-BF0BB322F29D",
+  "timestamp": "2026-09-14T18:40:00Z",
+  "coreName": "liebend",
+  "subName": "dankbar",
+  "word": "anerkennend",
+  "colorHex": "#F3D14E",
+  "note": "Anruf von Oma – hat mich so gefreut.",
+  "question": "Wofür genau bist du dankbar?"
+ },
+ {
+  "id": "74739F01-1394-45D7-8669-CEB5F50364A5",
+  "timestamp": "2026-09-14T06:07:00Z",
+  "coreName": "freudig",
+  "subName": "glücklich",
+  "word": "begeistert",
+  "colorHex": "#C2CF74",
+  "note": "Sonntagsfrühstück mit Lena auf dem Balkon.",
+  "question": "Was macht dich gerade glücklich?"
+ },
+ {
+  "id": "79BEAC39-4703-43E4-A5B4-503B1E320DDA",
+  "timestamp": "2026-09-13T18:57:00Z",
+  "coreName": "furchtsam",
+  "subName": "abgelehnt",
+  "word": "ausgeschlossen",
+  "colorHex": "#B49BD8",
+  "note": ""
+ },
+ {
+  "id": "733F540B-C5FD-45E9-8C68-3C9C3865CEDD",
+  "timestamp": "2026-09-12T17:34:00Z",
+  "coreName": "freudig",
+  "subName": "optimistisch",
+  "word": "hoffnungsvoll",
+  "colorHex": "#C2CF74",
+  "note": "Lange Radtour am See.",
+  "question": "Worauf hoffst du?"
+ },
+ {
+  "id": "65D988DA-DD5A-4380-AE0E-3B3DF31EEB01",
+  "timestamp": "2026-09-11T10:42:00Z",
+  "coreName": "freudig",
+  "subName": "glücklich",
+  "word": "vergnügt",
+  "colorHex": "#C2CF74",
+  "note": "Projekt endlich abgegeben!",
+  "question": "Was macht dich gerade glücklich?"
+ },
+ {
+  "id": "1630C48A-BE07-4A8F-8B3B-87520FECF2EE",
+  "timestamp": "2026-09-10T19:17:00Z",
+  "coreName": "freudig",
+  "subName": "gut gelaunt",
+  "word": "gemütlich",
+  "colorHex": "#C2CF74",
+  "note": ""
+ },
+ {
+  "id": "2E590D09-94BA-41FF-9486-E145FEC8B893",
+  "timestamp": "2026-09-10T17:22:00Z",
+  "coreName": "zornig",
+  "subName": "reizbar",
+  "word": "genervt",
+  "colorHex": "#E87E7E",
+  "note": ""
+ },
+ {
+  "id": "DF84FB3A-C8DA-4FF3-8A0C-A942CB2726D3",
+  "timestamp": "2026-09-09T10:49:00Z",
+  "coreName": "traurig",
+  "subName": "gelangweilt",
+  "word": "apathisch",
+  "colorHex": "#80C9A6",
+  "note": "Vermisse die Zeit in Lissabon.",
+  "question": "Was fehlt dir gerade?"
+ },
+ {
+  "id": "A1EA74A5-CC7C-46AD-A0AA-CF93C38815D0",
+  "timestamp": "2026-09-07T17:56:00Z",
+  "coreName": "furchtsam",
+  "subName": "entsetzt",
+  "word": "furchtbar",
+  "colorHex": "#B49BD8",
+  "note": ""
+ },
+ {
+  "id": "4B35B600-27C0-41AE-B479-464FD52BD277",
+  "timestamp": "2026-09-07T11:41:00Z",
+  "coreName": "furchtsam",
+  "subName": "erschrocken",
+  "word": "verängstigt",
+  "colorHex": "#B49BD8",
+  "note": ""
+ },
+ {
+  "id": "844BD584-1BD4-459B-B6D1-D3E1EBD25C19",
+  "timestamp": "2026-09-06T18:04:00Z",
+  "coreName": "liebend",
+  "subName": "romantisch",
+  "word": "verliebt",
+  "colorHex": "#F3D14E",
+  "note": ""
+ },
+ {
+  "id": "DDF540EC-178E-493C-AE49-2C31369E1DF0",
+  "timestamp": "2026-09-04T06:59:00Z",
+  "coreName": "liebend",
+  "subName": "liebevoll",
+  "word": "mitfühlend",
+  "colorHex": "#F3D14E",
+  "note": ""
+ },
+ {
+  "id": "A24D6D8F-6D65-4101-9A4A-2CC13AE5520C",
+  "timestamp": "2026-09-03T16:46:00Z",
+  "coreName": "freudig",
+  "subName": "stolz",
+  "word": "erhaben",
+  "colorHex": "#C2CF74",
+  "note": "Lange Radtour am See.",
+  "question": "Worauf bist du stolz?"
+ },
+ {
+  "id": "989162D3-4C92-4C95-8C49-E5B3AE927EF9",
+  "timestamp": "2026-09-02T11:15:00Z",
+  "coreName": "liebend",
+  "subName": "dankbar",
+  "word": "verbunden",
+  "colorHex": "#F3D14E",
+  "note": ""
+ },
+ {
+  "id": "C00A5D60-7E10-4FD8-B480-3E097D39BCE9",
+  "timestamp": "2026-09-01T05:39:00Z",
+  "coreName": "liebend",
+  "subName": "sentimental",
+  "word": "nostalgisch",
+  "colorHex": "#F3D14E",
+  "note": "Kleine Überraschung von Max.",
+  "question": "Welche Erinnerung ist gerade da?"
+ },
+ {
+  "id": "264CABFD-AC4D-47BF-B670-94A9F1BA6C53",
+  "timestamp": "2026-08-30T11:35:00Z",
+  "coreName": "liebend",
+  "subName": "sentimental",
+  "word": "nostalgisch",
+  "colorHex": "#F3D14E",
+  "note": ""
+ },
+ {
+  "id": "EF112FD4-212A-41C7-B1DE-A7F57EE5A9A5",
+  "timestamp": "2026-08-28T17:03:00Z",
+  "coreName": "traurig",
+  "subName": "schuldbewusst",
+  "word": "reumütig",
+  "colorHex": "#80C9A6",
+  "note": ""
+ },
+ {
+  "id": "83C61915-2F26-4197-A118-AE2E477F8E17",
+  "timestamp": "2026-08-26T06:15:00Z",
+  "coreName": "freudig",
+  "subName": "gut gelaunt",
+  "word": "gemütlich",
+  "colorHex": "#C2CF74",
+  "note": "Projekt endlich abgegeben!",
+  "question": "Was hat deine Laune gehoben?"
+ },
+ {
+  "id": "244A65BA-E946-43B6-822E-23F19A767EE6",
+  "timestamp": "2026-08-25T19:06:00Z",
+  "coreName": "liebend",
+  "subName": "friedlich",
+  "word": "ruhig",
+  "colorHex": "#F3D14E",
+  "note": "Anruf von Oma – hat mich so gefreut.",
+  "question": "Was hat dir heute Ruhe geschenkt?"
+ }
+]
