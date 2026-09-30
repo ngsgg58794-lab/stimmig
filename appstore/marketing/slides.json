@@ -97,11 +97,23 @@
     ]
   },
   {
-    "id": "09-dunkel",
+    "id": "09-widget",
+    "eyebrow": "Widget · Siri · Kontrollzentrum",
+    "title": "Immer<br>griffbereit",
+    "sub": "Ein Tipp oder ein Satz – und du bist im Rad.",
+    "shot": "raw/09-widget.png",
+    "fallback": null,
+    "colors": [
+      "#FF2D78",
+      "#F3D14E"
+    ]
+  },
+  {
+    "id": "10-dunkel",
     "eyebrow": "Dunkelmodus",
     "title": "Auch für späte<br>Gedanken",
     "sub": "Sanft zu den Augen – mit Dunkelmodus.",
-    "shot": "raw/09-dunkel.png",
+    "shot": "raw/10-dunkel.png",
     "fallback": null,
     "colors": [
       "#B49BD8",
