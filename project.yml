@@ -35,6 +35,7 @@ targets:
             CFBundleURLSchemes:
               - stimmig
         NSFaceIDUsageDescription: stimmig nutzt Face ID, um dein Tagebuch zu schützen.
+        NSHealthShareUsageDescription: stimmig liest keine Gesundheitsdaten. Die Freigabe wird nur benötigt, um Gefühle als Gemütszustand in Apple Health zu speichern.
         NSHealthUpdateUsageDescription: stimmig speichert die Gefühle, die du findest, auf Wunsch als Gemütszustand in Apple Health.
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:

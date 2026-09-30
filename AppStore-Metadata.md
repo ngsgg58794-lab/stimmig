@@ -9,7 +9,7 @@ Alles zum Copy-Paste in App Store Connect. Bereiche entsprechen den ASC-Tabs
 stimmig – Gefühlsrad
 
 **Untertitel** (max. 30 Zeichen)
-Dein Gefühl in drei Schritten
+Gefühle finden & verstehen
 
 **Kategorie**
 Primär: Gesundheit und Fitness
@@ -27,56 +27,59 @@ antworten. Ergebnis: 4+.
 
 **Beschreibung**
 ```
-stimmig hilft dir, in einem Moment innezuhalten und herauszufinden, wie du
-dich wirklich fühlst.
+Wie fühlst du dich – wirklich?
 
-Statt "gut" oder "schlecht" führt dich das Gefühlsrad in drei kurzen
-Schritten von einem groben Grundgefühl zu dem einen Wort, das wirklich
-passt – von innen nach außen, ganz in deinem Tempo.
+„Gut“ oder „schlecht“ reicht selten. stimmig führt dich mit dem Gefühlsrad
+in drei Tipps vom groben Grundgefühl zu dem einen Wort, das genau passt.
+Von innen nach außen, ganz in deinem Tempo.
 
-So funktioniert's:
-• Wähle das Grundgefühl, das dir am nächsten kommt
-• Verfeinere es Schritt für Schritt
-• Finde das genaue Wort für deinen Moment
-• Halte optional eine kurze Notiz dazu fest
+GEFÜHL FINDEN
+• Grundgefühl wählen, verfeinern, das passende Wort finden
+• 6 Grundgefühle, 36 Nuancen, 72 Worte
+• Sanfte Animationen und Haptik bei jedem Schritt
 
-Jedes gefundene Gefühl kannst du in deinem persönlichen Tagebuch speichern
-und später wieder nachlesen – so entsteht mit der Zeit ein Gefühl dafür,
-was dich bewegt.
+VERSTEHEN
+• Frage an dich: zu jedem Gefühl eine Reflexionsfrage, die weiterhilft
+• Notiz dazu festhalten – dein privates Tagebuch
+• Einblicke: Welche Gefühle überwiegen? Wann checkst du ein? Deine
+  häufigsten Worte, Kalender und Serie auf einen Blick
 
-Mehr als ein Tagebuch:
-• Einblicke: Welche Grundgefühle überwiegen? Wann checkst du ein? Dein
-  Gefühlskalender der letzten Wochen und deine häufigsten Worte
+DURCHATMEN
+• 1-Minuten-Übung passend zu deinem Gefühl: ruhig atmen bei Ärger,
+  Erdung bei Angst, Mitgefühl bei Traurigkeit, Genießen bei Freude
+
+TEILEN
+• Monatsrückblick: dein Monat als farbiges Gefühlsmosaik – als Bild
+  zum Teilen, ganz ohne Worte oder Notizen
+
+IMMER GRIFFBEREIT
+• Widgets für Home- und Sperrbildschirm
+• Siri: „Wie fühle ich mich mit stimmig“
+• Button im Kontrollzentrum (ab iOS 18)
 • Tägliche Erinnerung zu deiner Wunschzeit
-• Widget für Home- und Sperrbildschirm mit deinem letzten Gefühl und
-  deiner Serie
-• Apple Health (ab iOS 18, optional): Gefühle als Gemütszustand in Health
-  speichern
-• Frage an dich: eine passende Reflexionsfrage zu jedem Gefühl
-• 1-Minuten-Übungen: Atmung, Erdung, Mitgefühl oder Genießen – passend
-  zu deinem Gefühl
-• Monatsrückblick: dein Gefühlsmosaik als Bild zum Teilen
-• Siri („Wie fühle ich mich mit stimmig“) und Button im Kontrollzentrum
-• Tagebuch-Sperre mit Face ID
+• Apple Health: Gefühle optional als Gemütszustand sichern (ab iOS 18)
 • Dunkelmodus
 
-Privatsphäre first: stimmig braucht kein Konto, keine Anmeldung und keine
-Internetverbindung. Alle Einträge bleiben ausschließlich auf deinem Gerät.
-Keine Werbung, kein Tracking, keine Analyse-Tools.
+PRIVAT. WIRKLICH.
+Kein Konto, keine Anmeldung, keine Werbung, kein Tracking. Alle Einträge
+bleiben auf deinem iPhone. Auf Wunsch schützt Face ID dein Tagebuch.
 
-stimmig ist kein Medizinprodukt und ersetzt keine Therapie.
+stimmig ist kein Medizinprodukt und ersetzt keine Therapie oder ärztliche
+Beratung.
 ```
 
 **Untertitel/Slogan für Werbetext** (Promotional Text, max. 170 Zeichen,
 jederzeit ohne neuen Build änderbar)
 ```
-Finde das Wort für dein Gefühl – Schritt für Schritt, ganz privat, nur für dich.
+Finde das Wort für dein Gefühl – mit Reflexionsfragen, 1-Minuten-Übungen, Einblicken und deinem Monat als Farbmosaik. Ohne Konto, ohne Tracking.
 ```
 
 **Schlüsselwörter** (max. 100 Zeichen, kommagetrennt ohne Leerzeichen)
 ```
-Gefühle,Emotionen,Achtsamkeit,Tagebuch,Selbstreflexion,Stimmung,Journal,Wohlbefinden,Emotionsrad
+Stimmung,Emotionen,Achtsamkeit,Tagebuch,Journal,Mood,Tracker,Atemübung,Reflexion,Selbstfürsorge
 ```
+(„Gefühle“ und „Gefühlsrad“ stehen schon in Name/Untertitel – Apple
+indexiert die ohnehin, Wiederholen verschenkt Zeichen.)
 
 **Support-URL**
 ```
@@ -99,7 +102,8 @@ https://ngsgg58794-lab.github.io/stimmig/datenschutz
 
 **Was gibt's Neues in dieser Version** (Release Notes)
 ```
-Erste Version von stimmig.
+Willkommen bei stimmig! Finde das Wort für dein Gefühl, reflektiere mit
+passenden Fragen, atme eine Minute durch und entdecke deine Muster.
 ```
 
 ## App Privacy (Tab "App Privacy" / "Datenschutz" in ASC)
@@ -120,8 +124,18 @@ Werbe-SDKs, kein Nutzerkonto.
 
 ## Screenshots
 
-Noch offen – am besten direkt aus der TestFlight-Version auf deinem
-iPhone machen (Start-Screen, Gefühlsrad, Ergebnis-Screen, Tagebuch).
-Pflichtgröße für aktuelle iPhones: 6,9" / 6,5" Displays (1320×2868 oder
-1290×2796 px, je nach Gerät – Xcode/Screenshot zeigt es automatisch in
-der richtigen Auflösung an, wenn du auf einem echten Gerät screenshotest).
+Marketing-Screenshots (1320 × 2868, 6,9") erzeugt `appstore/marketing/render.py`
+aus Roh-Screenshots in `appstore/marketing/raw/`. Ergebnis: `appstore/marketing/out/`.
+Reihenfolge = Upload-Reihenfolge (01 zuerst, die ersten 3 sieht man in der Suche).
+
+| Datei (raw/) | Screen in der App |
+|---|---|
+| 01-rad.png | Gefühlsrad, erster Schritt (6 Grundgefühle) |
+| 02-schritte.png | dritter Schritt (Worte-Ring) |
+| 03-frage.png | Ergebnis mit „Frage an dich“, Notiz eingetippt |
+| 04-uebung.png | laufende Übung (Kreis + Text sichtbar) |
+| 05-einblicke.png | Einblicke, oben mit Kacheln + Grundgefühle-Diagramm |
+| 06-rueckblick.png | Einblicke runtergescrollt zum Monatsrückblick |
+| 07-widget.png | Home-Bildschirm mit stimmig-Widget |
+| 08-privat.png | Tagebuch mit mehreren Einträgen |
+| 09-dunkel.png | Gefühlsrad oder Ergebnis im Dunkelmodus |

@@ -35,6 +35,8 @@
 	<false/>
 	<key>NSFaceIDUsageDescription</key>
 	<string>stimmig nutzt Face ID, um dein Tagebuch zu schützen.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>stimmig liest keine Gesundheitsdaten. Die Freigabe wird nur benötigt, um Gefühle als Gemütszustand in Apple Health zu speichern.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>stimmig speichert die Gefühle, die du findest, auf Wunsch als Gemütszustand in Apple Health.</string>
 	<key>UILaunchScreen</key>
