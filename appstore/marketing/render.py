@@ -34,6 +34,10 @@ p {{ font-weight: 500; font-size: 50px; line-height: 1.3; color: {muted}; margin
 .screen img {{ width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }}
 .island {{ position: absolute; top: 34px; left: 50%; transform: translateX(-50%); width: 300px; height: 88px;
   background: #000; border-radius: 60px; }}
+.card {{ position: absolute; left: 50%; top: 1080px; width: 1120px; transform: translateX(-50%) rotate(-2.5deg);
+  border-radius: 56px; overflow: hidden; background: #FBFAF7;
+  box-shadow: 0 60px 120px rgba(22,19,15,.25), 0 0 0 2px rgba(22,19,15,.06); }}
+.card img {{ width: 100%; display: block; }}
 .placeholder {{ position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center;
   font: 700 54px "DM Sans"; color: #FF2D78; background: repeating-linear-gradient(45deg,#FFE3EE 0 40px,#FFF 40px 80px); padding: 80px; }}
 </style></head><body>
@@ -43,13 +47,13 @@ p {{ font-weight: 500; font-size: 50px; line-height: 1.3; color: {muted}; margin
   <h1>{title}</h1>
   <p>{sub}</p>
 </div>
-<div class="phone"><div class="screen">{screen}<div class="island"></div></div></div>
+{device}
 </body></html>"""
 
 
 def render(slide):
     shot = ROOT / slide["shot"]
-    if not shot.exists() and slide.get("fallback"):
+    if not shot.exists() and slide.get("fallback"):  # older 1.0 shot
         shot = ROOT / slide["fallback"]
     if shot.exists():
         screen = f'<img src="{shot.resolve().as_uri()}">'
@@ -67,7 +71,8 @@ def render(slide):
         blob_opacity=0.35 if dark else 0.55,
         c1=slide["colors"][0], c2=slide["colors"][1],
         eyebrow=html.escape(slide["eyebrow"]), title=slide["title"], sub=html.escape(slide["sub"]),
-        screen=screen,
+        device=(f'<div class="card">{screen}</div>' if slide.get("layout") == "card"
+                else f'<div class="phone"><div class="screen">{screen}<div class="island"></div></div></div>'),
     )
     src = ROOT / f".{slide['id']}.html"
     src.write_text(page, encoding="utf-8")

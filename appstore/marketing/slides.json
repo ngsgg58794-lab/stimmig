@@ -1,11 +1,112 @@
 [
-  {"id": "01-rad", "eyebrow": "Gefühlsrad", "title": "Wie fühlst du dich –<br>wirklich?", "sub": "Finde in drei Tipps das Wort, das genau passt.", "shot": "raw/01-rad.png", "fallback": "../2.png", "colors": ["#F3D14E", "#E87E7E"]},
-  {"id": "02-schritte", "eyebrow": "In 3 Schritten", "title": "Vom Kern zum<br>passenden Wort", "sub": "Von innen nach außen – ganz in deinem Tempo.", "shot": "raw/02-schritte.png", "fallback": "../4.png", "colors": ["#C2CF74", "#80C9A6"]},
-  {"id": "03-frage", "eyebrow": "Reflexion", "title": "Eine Frage, die<br>weiterhilft", "sub": "Zu jedem Gefühl eine passende Frage – und Platz für deine Gedanken.", "shot": "raw/03-frage.png", "fallback": null, "colors": ["#80C9A6", "#B49BD8"]},
-  {"id": "04-uebung", "eyebrow": "1 Minute", "title": "Eine Minute<br>nur für dich", "sub": "Atmen, erden, Mitgefühl – die Übung passend zu deinem Gefühl.", "shot": "raw/04-uebung.png", "fallback": null, "colors": ["#E87E7E", "#EFA85C"]},
-  {"id": "05-einblicke", "eyebrow": "Einblicke", "title": "Erkenne deine<br>Muster", "sub": "Sieh, was dich bewegt – und wann.", "shot": "raw/05-einblicke.png", "fallback": null, "colors": ["#B49BD8", "#F3D14E"]},
-  {"id": "06-rueckblick", "eyebrow": "Monatsrückblick", "title": "Dein Monat<br>in Farbe", "sub": "Teile dein Gefühlsmosaik – ganz ohne Worte.", "shot": "raw/06-rueckblick.png", "fallback": null, "colors": ["#EFA85C", "#C2CF74"]},
-  {"id": "07-widget", "eyebrow": "Widget · Siri · Kontrollzentrum", "title": "Immer<br>griffbereit", "sub": "Ein Tipp oder ein Satz – und du bist im Rad.", "shot": "raw/07-widget.png", "fallback": null, "colors": ["#FF2D78", "#F3D14E"]},
-  {"id": "08-privat", "eyebrow": "Privatsphäre", "title": "Privat.<br>Wirklich.", "sub": "Kein Konto, kein Tracking. Auf Wunsch mit Face ID geschützt.", "shot": "raw/08-privat.png", "fallback": "../6.png", "colors": ["#80C9A6", "#C2CF74"]},
-  {"id": "09-dunkel", "eyebrow": "Dunkelmodus", "title": "Auch für späte<br>Gedanken", "sub": "Sanft zu den Augen – mit Dunkelmodus.", "shot": "raw/09-dunkel.png", "fallback": null, "colors": ["#B49BD8", "#FF2D78"], "dark": true}
+  {
+    "id": "01-rad",
+    "eyebrow": "Gefühlsrad",
+    "title": "Wie fühlst du dich –<br>wirklich?",
+    "sub": "Finde in drei Tipps das Wort, das genau passt.",
+    "shot": "raw/01-rad.png",
+    "fallback": null,
+    "colors": [
+      "#F3D14E",
+      "#E87E7E"
+    ]
+  },
+  {
+    "id": "02-schritte",
+    "eyebrow": "In 3 Schritten",
+    "title": "Vom Kern zum<br>passenden Wort",
+    "sub": "Von innen nach außen – ganz in deinem Tempo.",
+    "shot": "raw/02-schritte.png",
+    "fallback": null,
+    "colors": [
+      "#C2CF74",
+      "#80C9A6"
+    ]
+  },
+  {
+    "id": "03-frage",
+    "eyebrow": "Reflexion",
+    "title": "Eine Frage, die<br>weiterhilft",
+    "sub": "Zu jedem Gefühl eine passende Frage – und Platz für deine Gedanken.",
+    "shot": "raw/03-frage.png",
+    "fallback": null,
+    "colors": [
+      "#80C9A6",
+      "#B49BD8"
+    ]
+  },
+  {
+    "id": "04-uebung",
+    "eyebrow": "1 Minute",
+    "title": "Eine Minute<br>nur für dich",
+    "sub": "Atmen, erden, Mitgefühl – die Übung passend zu deinem Gefühl.",
+    "shot": "raw/04-uebung.png",
+    "fallback": null,
+    "colors": [
+      "#E87E7E",
+      "#EFA85C"
+    ]
+  },
+  {
+    "id": "05-einblicke",
+    "eyebrow": "Einblicke",
+    "title": "Erkenne deine<br>Muster",
+    "sub": "Sieh, was dich bewegt – und wann.",
+    "shot": "raw/05-einblicke.png",
+    "fallback": null,
+    "colors": [
+      "#B49BD8",
+      "#F3D14E"
+    ]
+  },
+  {
+    "id": "06-rueckblick",
+    "eyebrow": "Monatsrückblick",
+    "title": "Dein Monat<br>in Farbe",
+    "sub": "Teile dein Gefühlsmosaik – ganz ohne Worte.",
+    "shot": "raw/06-rueckblick.png",
+    "fallback": null,
+    "colors": [
+      "#EFA85C",
+      "#C2CF74"
+    ],
+    "layout": "card"
+  },
+  {
+    "id": "07-einstellungen",
+    "eyebrow": "Erinnerung · Face ID · Health",
+    "title": "Sanft erinnert.<br>Sicher verwahrt.",
+    "sub": "Tägliche Erinnerung, Tagebuch-Sperre und Apple Health – alles optional.",
+    "shot": "raw/07-einstellungen.png",
+    "fallback": null,
+    "colors": [
+      "#FF2D78",
+      "#F3D14E"
+    ]
+  },
+  {
+    "id": "08-privat",
+    "eyebrow": "Privatsphäre",
+    "title": "Privat.<br>Wirklich.",
+    "sub": "Kein Konto, kein Tracking. Auf Wunsch mit Face ID geschützt.",
+    "shot": "raw/08-privat.png",
+    "fallback": null,
+    "colors": [
+      "#80C9A6",
+      "#C2CF74"
+    ]
+  },
+  {
+    "id": "09-dunkel",
+    "eyebrow": "Dunkelmodus",
+    "title": "Auch für späte<br>Gedanken",
+    "sub": "Sanft zu den Augen – mit Dunkelmodus.",
+    "shot": "raw/09-dunkel.png",
+    "fallback": null,
+    "colors": [
+      "#B49BD8",
+      "#FF2D78"
+    ],
+    "dark": true
+  }
 ]
