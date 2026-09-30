@@ -4,6 +4,14 @@ enum AppGroup {
     static let id = "group.com.pinksharkdesign.stimmig"
 }
 
+/// Journal lock setting. Stored in the App Group so the widget can hide the latest word while locked.
+enum LockSettings {
+    static let enabledKey = "journalLockEnabled"
+    static let store = UserDefaults(suiteName: AppGroup.id) ?? .standard
+
+    static var isEnabled: Bool { store.bool(forKey: enabledKey) }
+}
+
 /// The journal as a single JSON file. It lives in the App Group container so the
 /// widget can read it; falls back to the app's Documents directory if the group is unavailable.
 enum JournalFile {
