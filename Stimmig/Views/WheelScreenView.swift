@@ -42,7 +42,7 @@ struct WheelScreenView: View {
                     .fill(AppColor.highlight)
                     .frame(width: 14, height: 14)
             }
-            .frame(maxWidth: 340, maxHeight: 340)
+            .frame(maxWidth: 400, maxHeight: 400)
             .aspectRatio(1, contentMode: .fit)
             .id(step)
             .transition(.opacity.combined(with: .move(edge: .bottom)))
