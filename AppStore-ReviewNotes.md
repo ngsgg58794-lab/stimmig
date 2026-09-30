@@ -6,15 +6,21 @@ und im Resolution Center antworten:
 ```
 Following the Guideline 4.2 feedback, this build adds substantial native functionality beyond the feelings wheel and journal:
 
-- Insights (Swift Charts): distribution of core feelings for 7 days / 30 days / all time, a 5-week mood calendar, time-of-day chart, most frequent words and check-in streak. Open via the chart icon in the top bar.
-- Daily reminder: local notification at a user-chosen time (Settings via the gear icon). No server involved.
-- Widgets (WidgetKit): Home Screen (small) and Lock Screen (rectangular, circular, inline) widgets showing the latest feeling and streak; tapping opens the wheel directly.
-- Apple Health integration (iOS 18+, optional): saved feelings are written to Health as State of Mind samples (HKStateOfMind, write-only, nothing is read). Enable in Settings > "In Health speichern".
+- Reflection: every feeling comes with a tailored reflection question; the answer is saved with the entry.
+- 1-minute exercises matched to the feeling (breathing, box breathing, 5-4-3-2-1 grounding, self-compassion, savoring) with animation, timer and haptics. Result screen > "Übung".
+- Insights (Swift Charts): core-feeling distribution for 7 days / 30 days / all time, 5-week mood calendar, time-of-day chart, most frequent words, streak. Chart icon in the top bar.
+- Monthly recap: a mood mosaic rendered as a shareable image (colours only, no words or notes). Bottom of Insights.
+- Widgets (WidgetKit): Home Screen and Lock Screen widgets; tapping opens the wheel.
+- Siri / App Shortcuts ("Wie fühle ich mich mit stimmig") and a Control Center button (iOS 18+), both open the wheel.
+- Daily reminder via local notification (Settings, gear icon).
+- Optional journal lock with Face ID / passcode (Settings).
+- Optional Apple Health integration (iOS 18+): saved feelings are written as State of Mind samples (HKStateOfMind). Write-only, nothing is read. Settings > "In Health speichern".
+- Dark mode and haptic feedback throughout.
 
-All data stays on the device. No account, no network requests, no third-party services.
+No account or login is required. All data stays on the device; the app makes no network requests and uses no third-party services. The app is not a medical device and makes no health claims.
 ```
 
-Neue Screen-Aufnahme: zusätzlich Einblicke, Einstellungen (Erinnerung + Health-Freigabe) und das Widget auf dem Home-Bildschirm zeigen.
+Neue Screen-Aufnahme (echtes iPhone): App-Start → Rad → Ergebnis mit Frage → Übung kurz starten → speichern → Einblicke + Monatsrückblick → Einstellungen (Erinnerung, Face ID, Health-Freigabe) → Tagebuch, Eintrag löschen → Home-Bildschirm mit Widget.
 
 ---
 
