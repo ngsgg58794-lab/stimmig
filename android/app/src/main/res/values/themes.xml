@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.Stimmig" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">#FBFAF7</item>
+        <item name="android:statusBarColor">#FBFAF7</item>
+        <item name="android:navigationBarColor">#FBFAF7</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
